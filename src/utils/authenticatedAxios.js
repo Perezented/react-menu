@@ -7,6 +7,6 @@ export const authenticatedAxios = () => {
             Authorization: token,
             "Access-Control-Allow-Origin": "*",
         },
-        baseURL: "https://localhost:5000",
+        baseURL: "https://localhost:5678",
     });
 };
