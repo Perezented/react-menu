@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { useState } from "react";
+import { authenticatedAxios } from "../../utils/authenticatedAxios";
 import { fetchData } from "../../store/actions";
 import { connect } from "react-redux";
 const Menu = (props) => {
@@ -12,13 +14,13 @@ const Menu = (props) => {
             {!props.dataArray ? (
                 <h3>Loading, please wait...</h3>
             ) : (
-                props.dataArray.items.map((value) => {
-                    console.log(value);
+                props.dataArray.items &&
+                props.dataArray.items.map((value, key) => {
                     return (
-                        <div key={value.id}>
+                        <div key={key}>
                             <h2>{value.menuItem}</h2>
                             <h5>{value.description}</h5>
-                            <h6>{value.category}</h6>
+                            <h6>Category: {value.category}</h6>
                             <p>${value.price}</p>
                             {value.addtDescription && (
                                 <h5>{value.addtDescription}</h5>
@@ -35,7 +37,6 @@ const Menu = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log("menuItems mSTP : ", state);
     return {
         isFetching: state.dataFetchReducer.isFetching,
         error: state.dataFetchReducer.error,
@@ -44,3 +45,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { fetchData })(Menu);
+
+// props.dataArray.data.map((value) => {
+// })

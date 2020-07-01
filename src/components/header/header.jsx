@@ -10,31 +10,16 @@ export default function Header(props) {
         authenticatedAxios()
             .get("/menu/categories")
             .then((response) => {
-                console.log(response);
                 setCategories(response.data.categories);
             })
-            .catch((err) => {
-                console.log(err);
-            });
+            .catch((err) => {});
     }
     useEffect(() => {
         getCategories();
     }, []);
-    // const getCategories = () => {
-    //     axios()
+
     //         .get("https://node-menu.herokuapp.com/menu/categories")
-    //         .then((res) => {
-    //             // console.log(res);
-    //             setCategories(res.data);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // };
-    // useEffect(() => {
-    //     getCategories();
-    // }, []);
-    console.log("categories: ", categories);
+
     return (
         <div>
             <div>
@@ -46,10 +31,13 @@ export default function Header(props) {
                     <h4>Loading...</h4>
                 ) : (
                     categories &&
-                    categories.map((value) => {
-                        console.log(value.category);
+                    categories.map((value, key) => {
                         const linkValue = `/${value.category}`;
-                        return <Link to={linkValue}>{value.category}</Link>;
+                        return (
+                            <Link to={linkValue} key={key}>
+                                {value.category}
+                            </Link>
+                        );
                     })
                 )}
             </nav>
