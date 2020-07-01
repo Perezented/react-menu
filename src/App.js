@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-import { authenticatedAxios } from "./utils/authenticatedAxios";
 // import PrivateRoute from "./utils/privateRouter";
 
 import Header from "./components/header/header";
@@ -14,29 +13,12 @@ function App() {
     const [loggedIn, setLoggedIn] = useState(token && true);
     document.title = "Restaurant Menu";
 
-    const [menu, setMenu] = useState([]);
-    console.log(menu);
-    const getData = () => {
-        authenticatedAxios()
-            .get("/menu")
-            .then((res) => {
-                // console.log(res);
-                setMenu(res.data.items);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
-    useEffect(() => {
-        getData();
-    }, []);
-
     return (
         <>
             <Header />
             <Switch>
                 <Route path="/menu">
-                    <AllMenuItems menuItems={menu} />
+                    <AllMenuItems />
                 </Route>
             </Switch>
         </>
