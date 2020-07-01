@@ -21,7 +21,7 @@ function App() {
             .get("/menu")
             .then((res) => {
                 // console.log(res);
-                setMenu(res.data);
+                setMenu(res.data.items);
             })
             .catch((err) => {
                 console.log(err);
@@ -35,7 +35,9 @@ function App() {
         <>
             <Header />
             <Switch>
-                <Route path="/menu" component={AllMenuItems} />
+                <Route path="/menu">
+                    <AllMenuItems menuItems={menu} />
+                </Route>
             </Switch>
         </>
     );
