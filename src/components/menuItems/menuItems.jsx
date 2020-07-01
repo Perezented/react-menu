@@ -1,39 +1,31 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
-import { authenticatedAxios } from "../../utils/authenticatedAxios";
-
+import { fetchData } from "../../store/actions";
+import { connect } from "react-redux";
 const Menu = (props) => {
-    const [menu, setMenu] = useState([]);
-    console.log(menu);
-    async function getData() {
-        await authenticatedAxios()
-            .get("/menu")
-            .then((res) => {
-                // console.log(res);
-                setMenu(res.data.items);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
     useEffect(() => {
-        getData();
+        props.fetchData("menu");
     }, []);
 
     return (
         <div>
             <h1>This will be the menu</h1>
-            {!menu ? (
+            {!props.dataArray ? (
                 <h3>Loading, please wait...</h3>
             ) : (
-                menu.length !== 0 &&
-                menu.map((value) => {
-                    console.log("yoooo", value);
+                props.dataArray.items.map((value) => {
+                    console.log(value);
                     return (
-                        <div>
+                        <div key={value.id}>
                             <h2>{value.menuItem}</h2>
                             <h5>{value.description}</h5>
+                            <h6>{value.category}</h6>
                             <p>${value.price}</p>
+                            {value.addtDescription && (
+                                <h5>{value.addtDescription}</h5>
+                            )}
+                            {value.additionalPrice && (
+                                <h5>{value.additionalPrice}</h5>
+                            )}
                         </div>
                     );
                 })
@@ -42,4 +34,13 @@ const Menu = (props) => {
     );
 };
 
-export default Menu;
+const mapStateToProps = (state) => {
+    console.log("menuItems mSTP : ", state);
+    return {
+        isFetching: state.dataFetchReducer.isFetching,
+        error: state.dataFetchReducer.error,
+        dataArray: state.dataFetchReducer.dataArray,
+    };
+};
+
+export default connect(mapStateToProps, { fetchData })(Menu);

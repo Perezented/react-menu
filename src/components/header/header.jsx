@@ -52,7 +52,6 @@ export default function Header(props) {
                         return <Link to={linkValue}>{value.category}</Link>;
                     })
                 )}
-                {/* Add a list of Nav items to links to each different category type. */}
             </nav>
         </div>
     );
