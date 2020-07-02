@@ -14,14 +14,14 @@ function App() {
     document.title = "Restaurant Menu";
 
     return (
-        <>
+        <div className="App">
             <Header />
             <Switch>
                 <Route path="/menu">
                     <AllMenuItems />
                 </Route>
             </Switch>
-        </>
+        </div>
     );
 }
 

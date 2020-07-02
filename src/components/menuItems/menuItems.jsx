@@ -3,6 +3,7 @@ import { useState } from "react";
 import { authenticatedAxios } from "../../utils/authenticatedAxios";
 import { fetchData } from "../../store/actions";
 import { connect } from "react-redux";
+import Counter from "../counter/counter";
 const Menu = (props) => {
     useEffect(() => {
         props.fetchData("menu");
@@ -28,6 +29,7 @@ const Menu = (props) => {
                             {value.additionalPrice && (
                                 <h5>{value.additionalPrice}</h5>
                             )}
+                            <Counter />
                         </div>
                     );
                 })
