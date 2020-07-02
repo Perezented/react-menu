@@ -19,18 +19,21 @@ const Menu = (props) => {
                 props.dataArray.items.map((value, key) => {
                     let newCount = 1;
                     return (
-                        <div key={key}>
+                        <div className="menuItems" key={key}>
                             <h2>{value.menuItem}</h2>
                             <h5>{value.description}</h5>
-                            <h6>Category: {value.category}</h6>
-                            <p>${value.price}</p>
-                            {value.addtDescription && (
-                                <h5>{value.addtDescription}</h5>
-                            )}
-                            {value.additionalPrice && (
-                                <h5>{value.additionalPrice}</h5>
-                            )}
-                            <Counter />
+                            <div className="subMenuItems">
+                                {" "}
+                                <h6>Category: {value.category}</h6>
+                                <p>${value.price}</p>
+                                {value.addtDescription && (
+                                    <h5>{value.addtDescription}</h5>
+                                )}
+                                {value.additionalPrice && (
+                                    <h5>{value.additionalPrice}</h5>
+                                )}
+                                <Counter />
+                            </div>
                         </div>
                     );
                 })
