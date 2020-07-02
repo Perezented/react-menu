@@ -10,13 +10,14 @@ const Menu = (props) => {
     }, []);
 
     return (
-        <div>
-            <h1>This will be the menu</h1>
+        <section>
+            <h1>Welcome! All Menu Items Listed Below</h1>
             {!props.dataArray ? (
                 <h3>Loading, please wait...</h3>
             ) : (
                 props.dataArray.items &&
                 props.dataArray.items.map((value, key) => {
+                    let newCount = 1;
                     return (
                         <div key={key}>
                             <h2>{value.menuItem}</h2>
@@ -34,7 +35,7 @@ const Menu = (props) => {
                     );
                 })
             )}
-        </div>
+        </section>
     );
 };
 

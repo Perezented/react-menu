@@ -1,21 +1,30 @@
 import React from "react";
+import { useState } from "react";
 
-import { useSelector, useDispatch } from "react-redux";
-import { fetchData, increment, decrement } from "../../store/actions";
-
-function Counter() {
-    const counter = useSelector((state) => {
-        return state.counterReducer;
-    });
-    const dispatch = useDispatch();
-    console.log(counter);
+function Counter(props) {
+    let [counter, setCounter] = useState(1);
     return (
         <div>
-            {<h6>Counter: {counter}</h6>}
+            <button
+                onClick={() => {
+                    setCounter(counter - 1);
+                }}
+            >
+                -
+            </button>
+            {<h6>Total: {counter}</h6>}
 
-            <button onClick={() => dispatch(increment())}>+</button>
-            <button onClick={() => dispatch(decrement())}>-</button>
+            <button
+                onClick={() => {
+                    setCounter(counter + 1);
+                }}
+            >
+                +
+            </button>
+            <br />
+            <button>Add to cart</button>
         </div>
     );
 }
+
 export default Counter;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 // import PrivateRoute from "./utils/privateRouter";
@@ -8,7 +8,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Header from "./components/header/header";
 import AllMenuItems from "./components/menuItems/menuItems";
 
-function App() {
+function App(props) {
+    console.log(props);
     const token = localStorage.getItem("token");
     const [loggedIn, setLoggedIn] = useState(token && true);
     document.title = "Restaurant Menu";

@@ -21,12 +21,14 @@ export default function Header(props) {
     //         .get("https://node-menu.herokuapp.com/menu/categories")
 
     return (
-        <div>
-            <div>
+        <div className="header">
+            <div className="trueHeader">
                 <h3>Bienvenidos A </h3>
                 <h1>Restarante Mexicano</h1>
             </div>
             <nav>
+                <Link to="/menu">All Menu Items</Link>
+
                 {!categories ? (
                     <h4>Loading...</h4>
                 ) : (
@@ -40,6 +42,7 @@ export default function Header(props) {
                         );
                     })
                 )}
+                <Link to="/cart">Cart</Link>
             </nav>
         </div>
     );
