@@ -9,7 +9,7 @@ const Menu = (props) => {
     useEffect(() => {
         props.fetchMenuData("menu");
     }, []);
-    props.menuArray && console.log("menu props", props.menuArray);
+    console.log("menuItems props", props);
     return (
         <section className="menuComponent">
             <h1>Welcome! All Menu Items Listed Below</h1>
@@ -26,7 +26,6 @@ const Menu = (props) => {
                                         {value.category}
                                     </h4>
                                     <div className="menuCard">
-                                        {" "}
                                         <h2>{value.menuItem}</h2>
                                         <h5>{value.description}</h5>
                                         <div className="subMenuItems">
@@ -38,15 +37,19 @@ const Menu = (props) => {
                                             {value.additionalPrice && (
                                                 <h5>{value.additionalPrice}</h5>
                                             )}
-                                            <Counter id={key} />
+                                            <Counter
+                                                id={key + 1}
+                                                foodItem={value}
+                                                addItem={props.cart.addItem}
+                                            />
                                         </div>
-                                    </div>{" "}
+                                    </div>
                                 </div>
                             );
                         })}
                 </section>
             )}
-            <SideCart />
+            <SideCart cart={props.cart} />
         </section>
     );
 };

@@ -3,8 +3,7 @@ import { useState } from "react";
 
 function Counter(props) {
     let [counter, setCounter] = useState(1);
-    console.log(props.id, counter);
-    console.log(props);
+    console.log("counter props", props, counter);
     return (
         <div className="counter">
             <button
@@ -34,7 +33,14 @@ function Counter(props) {
                 +
             </button>
             <br />
-            <button>Add to cart</button>
+            <button
+                onClick={() => {
+                    props.foodItem.amount = counter;
+                    props.addItem(props.foodItem);
+                }}
+            >
+                Add to cart
+            </button>
         </div>
     );
 }

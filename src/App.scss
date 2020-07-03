@@ -15,7 +15,7 @@
     background-position: center;
     height: auto;
     .spacer {
-        padding: 11vh 15vw 0;
+        padding: 11vh 12vw 0;
     }
 }
 
@@ -135,7 +135,7 @@
         padding: 1px 0 1%;
         border-bottom: 1px solid white;
         background-color: rgba(219, 196, 196, 0.6);
-        border-radius: 4% 0 4% 0;
+        border-radius: 9% 0 4% 0%;
 
         .menuCard {
             width: 95%;
@@ -214,6 +214,7 @@
 }
 .allMenuButton {
     width: 20vw;
+    height: 2rem;
     margin: 4px auto;
     a {
         color: black;

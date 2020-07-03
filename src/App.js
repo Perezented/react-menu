@@ -15,7 +15,18 @@ function App(props) {
     const token = localStorage.getItem("token");
     const [loggedIn, setLoggedIn] = useState(token && true);
     document.title = "Restaurant Menu";
-
+    const [cart, setCart] = useState([]);
+    console.log(cart);
+    function addItem(item) {
+        setCart([...cart, item]);
+    }
+    function removeItem(item) {
+        setCart([
+            ...cart.filter((v) => {
+                return v.id !== item.id;
+            }),
+        ]);
+    }
     return (
         <>
             <div className="imgBackground" />
@@ -28,10 +39,14 @@ function App(props) {
                     </Route>
                     <Switch>
                         <Route exact path="/">
-                            <AllMenuItems />
+                            <AllMenuItems
+                                cart={{ cart, removeItem, addItem }}
+                            />
                         </Route>
                         <Route path="/categories">
-                            <AllMenuItems />
+                            <AllMenuItems
+                                cart={{ cart, removeItem, addItem }}
+                            />
                         </Route>
                         <Route path="/" />
                     </Switch>
