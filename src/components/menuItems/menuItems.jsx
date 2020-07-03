@@ -8,7 +8,7 @@ const Menu = (props) => {
     useEffect(() => {
         props.fetchMenuData("menu");
     }, []);
-    props.menuArray && console.log('menu props', props.menuArray)
+    props.menuArray && console.log("menu props", props.menuArray);
     return (
         <section>
             <h1>Welcome! All Menu Items Listed Below</h1>
@@ -20,21 +20,24 @@ const Menu = (props) => {
                     console.log(key);
                     return (
                         <div className="menuItems" key={key}>
-                                <h4 className='categoryValue'>{value.category}</h4>
-<div className='menuCard'>                            <h2>{value.menuItem}</h2>
-                            <h5>{value.description}</h5>
-                            <div className="subMenuItems">
+                            <h4 className="categoryValue">{value.category}</h4>
+                            <div className="menuCard">
                                 {" "}
-                                <p>${value.price}</p>
-                                {value.addtDescription && (
-                                    <h5>{value.addtDescription}</h5>
-                                )}
-                                {value.additionalPrice && (
-                                    <h5>{value.additionalPrice}</h5>
-                                )}
-                                <Counter id={key} />
-                            </div>
-</div>                        </div>
+                                <h2>{value.menuItem}</h2>
+                                <h5>{value.description}</h5>
+                                <div className="subMenuItems">
+                                    {" "}
+                                    <p>${value.price}</p>
+                                    {value.addtDescription && (
+                                        <h5>{value.addtDescription}</h5>
+                                    )}
+                                    {value.additionalPrice && (
+                                        <h5>{value.additionalPrice}</h5>
+                                    )}
+                                    <Counter id={key} />
+                                </div>
+                            </div>{" "}
+                        </div>
                     );
                 })
             )}
@@ -43,7 +46,7 @@ const Menu = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log('menu state', state)
+    console.log("menu state", state);
     return {
         isFetching: state.menuFetchReducer.isFetching,
         error: state.menuFetchReducer.error,

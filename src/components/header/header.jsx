@@ -20,14 +20,13 @@ export default function Header(props) {
 
     console.log(categories);
 
-    //         .get("https://node-menu.herokuapp.com/menu/categories")
     return (
         <div className="header">
             <div className="trueHeader">
                 <h3>Bienvenidos A </h3>
                 <h1>Restarante Mexicano</h1>
             </div>
-            <Link to="/menu">All Menu Items</Link>
+            <Link to="/">All Menu Items</Link>
             <div className="img" />
             {/* <nav>
                 <h2>Categories</h2>

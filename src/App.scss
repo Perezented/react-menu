@@ -98,7 +98,7 @@ section {
     border: 1px solid red;
     background-color: rgba(150, 150, 150, 0.4);
     padding: 1% 2%;
-    display:grid;
+    display: grid;
     h1 {
         padding-bottom: 3%;
         color: white;
@@ -106,14 +106,13 @@ section {
     .categoryValue {
         width: 10vh;
         height: auto;
-        transform:rotate(90deg);
-        font-size:2rem;
+        transform: rotate(90deg);
+        font-size: 2rem;
         margin-bottom: -8%;
         margin-left: -4%;
         margin-top: 6%;
         padding: 2% 2% 2%;
-        text-align:center;
-        
+        text-align: center;
     }
 
     .menuItems {
@@ -122,11 +121,9 @@ section {
         padding: 0 0 2%;
         border-bottom: 1px solid white;
         background-color: rgba(219, 196, 196, 0.6);
-        .menuCard{
+        .menuCard {
             width: 95%;
             margin-top: -6%;
-            
-            
         }
         .subMenuItems {
             background-color: rgba(219, 196, 196, 0);
