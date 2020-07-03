@@ -26,7 +26,6 @@ export default function Header(props) {
                 <h3>Bienvenidos A </h3>
                 <h1>Restarante Mexicano</h1>
             </div>
-            <Link to="/">All Menu Items</Link>
             <div className="img" />
             {/* <nav>
                 <h2>Categories</h2>

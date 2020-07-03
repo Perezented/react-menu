@@ -94,14 +94,28 @@
     // }
 }
 
-section {
-    border: 1px solid red;
+.menuComponent {
+    border: 2px solid white;
+    border-bottom: 4px solid white;
+    border-right: 4px solid rgb(165, 165, 165);
     background-color: rgba(150, 150, 150, 0.4);
-    padding: 1% 2%;
+    padding: 1% 2% 3%;
     display: grid;
     h1 {
         padding-bottom: 3%;
         color: white;
+        grid-area: 1/1;
+    }
+    .menuList {
+        grid-area: 2/1/3;
+    }
+    .sideCart {
+        font-size: 1rem;
+        color: lime;
+        border: 5px ridge lime;
+        padding: 2%;
+        grid-area: 2/4;
+        width: 15vw;
     }
     .categoryValue {
         width: 10vh;
@@ -116,14 +130,19 @@ section {
     }
 
     .menuItems {
-        width: 90%;
-        margin: 0 auto;
-        padding: 0 0 2%;
+        width: 95%;
+        margin-left: 2.5%;
+        padding: 1px 0 1%;
         border-bottom: 1px solid white;
         background-color: rgba(219, 196, 196, 0.6);
+        border-radius: 4% 0 4% 0;
+
         .menuCard {
             width: 95%;
-            margin-top: -6%;
+            h5 {
+                padding: 1% 3% 1% 13%;
+                line-height: 1rem;
+            }
         }
         .subMenuItems {
             background-color: rgba(219, 196, 196, 0);
@@ -175,20 +194,31 @@ section {
 }
 .categories {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     line-height: 2rem;
-    .singleCat {
-        background-color: rgba(219, 196, 196, 0.7);
-        margin: 1%;
-        padding: 3%;
-        &:hover {
-            cursor: pointer;
-            background-color: rgba(219, 196, 196, 0.8);
-        }
-    }
     a {
         color: black;
         font-weight: 600;
         font-size: 1.3rem;
+    }
+}
+.singleCat {
+    background-color: rgba(219, 217, 217, 0.55);
+    margin: 2px;
+    height: 5vh;
+    padding-top: 2%;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(219, 217, 217, 0.9);
+    }
+}
+.allMenuButton {
+    width: 20vw;
+    margin: 4px auto;
+    a {
+        color: black;
+        font-weight: 600;
+        font-size: 1.3rem;
+        text-decoration: none;
     }
 }

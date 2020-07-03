@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { fetchDeeperMenuItems } from "../../store/actions";
 import { Link, useHistory } from "react-router-dom";
-import {authenticatedAxios} from '../../utils/authenticatedAxios'
+import { authenticatedAxios } from "../../utils/authenticatedAxios";
 import { connect } from "react-redux";
 import { fetchMenuData } from "../../store/actions";
 
@@ -14,35 +14,40 @@ const Categories = (props) => {
     // props.categoriesArray &&
     //     console.log("categories props", props);
 
-
-
     return (
         <section>
-            <h3>Categories here</h3>{" "}
+            <div
+                className="singleCat allMenuButton"
+                onClick={() => {
+                    push("/");
+                    props.fetchMenuData("menu");
+                }}
+            >
+                <Link to="/">All Menu Items</Link>{" "}
+            </div>{" "}
             <div className="categories">
                 {!props.categoriesArray ? (
                     <h3>Loading, Please Wait...</h3>
                 ) : (
                     props.categoriesArray.categories.map((value, key) => {
-                     
                         const linkValue = `categories?filter=${value.category}`;
                         const linkValueWithMenu = `menu/categories?filter=${value.category}`;
                         return (
-                            <div key={key}
+                            <div
+                                key={key}
                                 className="singleCat"
                                 onClick={() => {
                                     // authenticatedAxios().get(linkValue).then((response)=>{
                                     //     console.log(response)
 
                                     // }).catch((err)=>{console.log(err);})
-                                    props.fetchMenuData(linkValueWithMenu)
-                                    push(linkValue)
-                                    push('menu')
-                                    push(linkValue)
-
+                                    props.fetchMenuData(linkValueWithMenu);
+                                    // push(linkValue);
+                                    // push("menu");
+                                    // push(linkValue);
                                 }}
                             >
-                                <Link to={linkValue} >
+                                <Link to={linkValue}>
                                     {value.categoryDescription}
                                 </Link>
                             </div>
@@ -60,8 +65,10 @@ const mapStateToProps = (state) => {
         error: state.categoriesFetchReducer.error,
         categoriesArray: state.categoriesFetchReducer.categoriesArray,
         menuArray: state.menuFetchReducer.menuArray,
-
     };
 };
 
-export default connect(mapStateToProps, { fetchDeeperMenuItems, fetchMenuData })(Categories);
+export default connect(mapStateToProps, {
+    fetchDeeperMenuItems,
+    fetchMenuData,
+})(Categories);
