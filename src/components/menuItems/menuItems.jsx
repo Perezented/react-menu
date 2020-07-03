@@ -1,23 +1,23 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { authenticatedAxios } from "../../utils/authenticatedAxios";
-import { fetchData } from "../../store/actions";
+import { fetchMenuData } from "../../store/actions";
 import { connect } from "react-redux";
 import Counter from "../counter/counter";
 const Menu = (props) => {
     useEffect(() => {
-        props.fetchData("menu");
+        props.fetchMenuData("menu");
     }, []);
 
     return (
         <section>
             <h1>Welcome! All Menu Items Listed Below</h1>
-            {!props.dataArray ? (
+            {!props.menuArray ? (
                 <h3>Loading, please wait...</h3>
             ) : (
-                props.dataArray.items &&
-                props.dataArray.items.map((value, key) => {
-                    let newCount = 1;
+                props.menuArray.items &&
+                props.menuArray.items.map((value, key) => {
+                    console.log(key);
                     return (
                         <div className="menuItems" key={key}>
                             <h2>{value.menuItem}</h2>
@@ -32,7 +32,7 @@ const Menu = (props) => {
                                 {value.additionalPrice && (
                                     <h5>{value.additionalPrice}</h5>
                                 )}
-                                <Counter />
+                                <Counter id={key} />
                             </div>
                         </div>
                     );
@@ -44,13 +44,13 @@ const Menu = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isFetching: state.dataFetchReducer.isFetching,
-        error: state.dataFetchReducer.error,
-        dataArray: state.dataFetchReducer.dataArray,
+        isFetching: state.menuFetchReducer.isFetching,
+        error: state.menuFetchReducer.error,
+        menuArray: state.menuFetchReducer.menuArray,
     };
 };
 
-export default connect(mapStateToProps, { fetchData })(Menu);
+export default connect(mapStateToProps, { fetchMenuData })(Menu);
 
 // props.dataArray.data.map((value) => {
 // })

@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import Header from "./components/header/header";
 import AllMenuItems from "./components/menuItems/menuItems";
+import SpecialOfTheDay from "./components/specialOfTheDay/specialOfTheDay";
+import Categories from "./components/categories/categories";
 
 function App(props) {
     console.log(props);
@@ -15,17 +17,24 @@ function App(props) {
     document.title = "Restaurant Menu";
 
     return (
-        <div className="App">
-            {" "}
-            <Header />
-            <div className="spacer">
-                <Switch>
-                    <Route path="/menu">
-                        <AllMenuItems />
+        <>
+            <div className="imgBackground" />
+            <div className="App">
+                <Header />
+                <div className="spacer">
+                    <SpecialOfTheDay />
+                    <Route path="/">
+                        <Categories />
                     </Route>
-                </Switch>
+                    <Switch>
+                        <Route path="/menu">
+                            <AllMenuItems />
+                        </Route>
+                        <Route path="/" />
+                    </Switch>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

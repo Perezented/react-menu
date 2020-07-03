@@ -1,15 +1,21 @@
 .App {
     text-align: center;
     display: grid;
+    align-content: initial;
     background-color: wheat;
     line-height: 0.5rem;
+    height: auto;
     background-image: url("./utils/img/tanushree-rao-yj0eN2meINw-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center;
+    height: auto;
     .spacer {
-        padding: 0 10vw;
+        padding: 0 15vw;
     }
 }
 
@@ -52,44 +58,53 @@
     display: grid;
     width: 100%;
     height: 10vh;
+    background-image: url("./utils/img/abstract-19616_1280.jpg");
+    background-size: cover;
     background-color: rgb(104, 80, 41);
     .img {
         width: 17vw;
         margin-top: 16vh;
         z-index: 100;
     }
-    nav {
-        position: fixed;
-        z-index: 99;
-        display: grid;
-        justify-items: left;
-        align-items: center;
-        height: 84vh;
-        margin-top: 12vh;
-        margin-left: 10vw;
-        border: 1px solid magenta;
-        width: 17vw;
-        background-color: rgb(224, 192, 140);
-        a {
-            color: black;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-left: 1rem;
-        }
-    }
+    // nav {
+    //     position: fixed;
+    //     z-index: 99;
+    //     display: grid;
+    //     justify-items: left;
+    //     align-items: center;
+    //     height: 84vh;
+    //     margin-top: 12vh;
+    //     margin-left: 10vw;
+    //     border: 1px solid magenta;
+    //     border-radius: 5px;
+    //     width: 17vw;
+    //     background-color: rgb(190, 152, 90);
+
+    //     h2 {
+    //         margin-left: 0.8rem;
+    //     }
+    //     a {
+    //         color: black;
+    //         font-weight: 600;
+    //         font-size: 1rem;
+    //         margin-left: 1.5rem;
+    //     }
+    // }
 }
 
 section {
     border: 1px solid red;
+    background-color: rgba(219, 196, 196, 0.4);
+    padding: 3% 2%;
     h1 {
-        margin-left: 16vw;
+        padding-bottom: 3%;
     }
     .menuItems {
+        width: 90%;
+        margin: 0 auto;
         padding: 2%;
-        margin-left: 18vw;
         border-bottom: 1px solid white;
-        width: 70%;
-        background-color: rgba(219, 196, 196, 0.7);
+        background-color: rgba(219, 196, 196, 0.6);
         .subMenuItems {
             background-color: rgba(219, 196, 196, 0);
             margin: 0;
@@ -98,11 +113,58 @@ section {
             align-items: center;
             height: 5vh;
             width: 99%;
-            border: 3px solid black;
         }
         .counter {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            border: 1px solid brown;
+            width: auto;
+            input {
+                width: 15%;
+            }
+            button {
+                margin: 0 3%;
+                border-radius: 1px;
+                border: 1px solid grey;
+                border-bottom: 2px solid slategray;
+                border-right: 2px solid slategray;
+            }
+            button:last-child {
+                width: 70%;
+            }
         }
+    }
+}
+.specialOfTheDay {
+    align-self: start;
+    text-align: center;
+    display: grid;
+    background-color: rgba(219, 196, 196, 0.6);
+
+    .sotdInputs {
+        width: fit-content;
+        text-align: right;
+        margin: 0 auto;
+    }
+
+    button {
+        width: fit-content;
+        justify-self: center;
+    }
+}
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    line-height: 2rem;
+    .singleCat {
+        background-color: rgba(219, 196, 196, 0.6);
+        margin: 1%;
+        padding: 3%;
+    }
+    a {
+        color: black;
+        font-weight: 600;
+        font-size: 1.3rem;
     }
 }

@@ -3,6 +3,8 @@ import { useState } from "react";
 
 function Counter(props) {
     let [counter, setCounter] = useState(1);
+    console.log(props.id, counter);
+    console.log(props);
     return (
         <div className="counter">
             <button
@@ -12,8 +14,18 @@ function Counter(props) {
             >
                 -
             </button>
-            {<h6>Total: {counter}</h6>}
+            {/* {<h6>Total: </h6>} */}
 
+            <label>
+                Total:{" "}
+                <input
+                    type="integer"
+                    value={counter}
+                    onChange={(event) => {
+                        setCounter(Math.floor(event.target.value));
+                    }}
+                ></input>
+            </label>
             <button
                 onClick={() => {
                     setCounter(counter + 1);

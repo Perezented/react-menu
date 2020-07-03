@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 
-import { dataFetchReducer } from "./dataFetchReducer";
+import { menuFetchReducer, categoriesFetchReducer } from "./dataFetchReducer";
 import { counterReducer } from "./counterReducer";
 export default combineReducers({
-    dataFetchReducer,
+    menuFetchReducer,
+    categoriesFetchReducer,
     counterReducer,
 });

@@ -27,16 +27,16 @@ export default function Header(props) {
                 <h3>Bienvenidos A </h3>
                 <h1>Restarante Mexicano</h1>
             </div>
+            <Link to="/menu">All Menu Items</Link>
             <div className="img" />
-            <nav>
-                <Link to="/menu">All Menu Items</Link>
-
+            {/* <nav>
+                <h2>Categories</h2>
                 {!categories ? (
                     <h4>Loading...</h4>
                 ) : (
                     categories &&
                     categories.map((value, key) => {
-                        const linkValue = `/${value.category}`;
+                        const linkValue = `/menu/${value.category}`;
                         return (
                             <Link to={linkValue} key={key}>
                                 {value.categoryDescription}
@@ -44,7 +44,7 @@ export default function Header(props) {
                         );
                     })
                 )}
-            </nav>
+            </nav> */}
         </div>
     );
 }
