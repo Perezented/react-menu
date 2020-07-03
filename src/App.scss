@@ -15,7 +15,7 @@
     background-position: center;
     height: auto;
     .spacer {
-        padding: 0 15vw;
+        padding: 11vh 15vw 0;
     }
 }
 
@@ -61,6 +61,8 @@
     background-image: url("./utils/img/abstract-19616_1280.jpg");
     background-size: cover;
     background-color: rgb(104, 80, 41);
+    position: fixed;
+    z-index: 99;
     .img {
         width: 17vw;
         margin-top: 16vh;
@@ -94,17 +96,38 @@
 
 section {
     border: 1px solid red;
-    background-color: rgba(219, 196, 196, 0.4);
-    padding: 3% 2%;
+    background-color: rgba(150, 150, 150, 0.4);
+    padding: 1% 2%;
+    display:grid;
     h1 {
         padding-bottom: 3%;
+        color: white;
     }
+    .categoryValue {
+        width: 10vh;
+        height: auto;
+        transform:rotate(90deg);
+        font-size:2rem;
+        margin-bottom: -8%;
+        margin-left: -4%;
+        margin-top: 6%;
+        padding: 2% 2% 2%;
+        text-align:center;
+        
+    }
+
     .menuItems {
         width: 90%;
         margin: 0 auto;
-        padding: 2%;
+        padding: 0 0 2%;
         border-bottom: 1px solid white;
         background-color: rgba(219, 196, 196, 0.6);
+        .menuCard{
+            width: 95%;
+            margin-top: -6%;
+            
+            
+        }
         .subMenuItems {
             background-color: rgba(219, 196, 196, 0);
             margin: 0;
@@ -158,9 +181,13 @@ section {
     grid-template-columns: repeat(3, 1fr);
     line-height: 2rem;
     .singleCat {
-        background-color: rgba(219, 196, 196, 0.6);
+        background-color: rgba(219, 196, 196, 0.7);
         margin: 1%;
         padding: 3%;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(219, 196, 196, 0.8);
+        }
     }
     a {
         color: black;

@@ -10,12 +10,14 @@ import {
 const initialState = {
     isFetching: false,
     error: "",
-    dataArray: "",
+    menuArray: "",
+    categoriesArray: "",
 };
 const initialStateCategories = {
     isFetching: false,
     error: "",
     categoriesArray: "",
+    menuArray: '',
 };
 
 export const menuFetchReducer = (state = initialState, action) => {
@@ -25,14 +27,17 @@ export const menuFetchReducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload,
+    categoriesArray: "",
                 isFetching: false,
             };
         // When data fetch is successful
         case FETCH_DATA_SUCCESS:
+            
             return {
                 ...state,
                 error: "",
                 isFetching: false,
+    categoriesArray: "",
                 menuArray: action.payload,
             };
         // When data fetch is started
@@ -41,6 +46,7 @@ export const menuFetchReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: true,
                 error: "",
+    categoriesArray: "",
                 menuArray: action.payload,
             };
 

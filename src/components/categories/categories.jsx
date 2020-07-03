@@ -2,16 +2,19 @@ import React, { useEffect } from "react";
 
 import { fetchDeeperMenuItems } from "../../store/actions";
 import { Link, useHistory } from "react-router-dom";
-
+import {authenticatedAxios} from '../../utils/authenticatedAxios'
 import { connect } from "react-redux";
+import { fetchMenuData } from "../../store/actions";
 
 const Categories = (props) => {
     const { push } = useHistory();
     useEffect(() => {
         props.fetchDeeperMenuItems("categories");
     }, []);
-    props.categoriesArray &&
-        console.log("props", props.categoriesArray.categories);
+    // props.categoriesArray &&
+    //     console.log("categories props", props);
+
+
 
     return (
         <section>
@@ -21,15 +24,25 @@ const Categories = (props) => {
                     <h3>Loading, Please Wait...</h3>
                 ) : (
                     props.categoriesArray.categories.map((value, key) => {
-                        const linkValue = `/menu/${value.category}`;
+                     
+                        const linkValue = `categories?filter=${value.category}`;
+                        const linkValueWithMenu = `menu/categories?filter=${value.category}`;
                         return (
-                            <div
+                            <div key={key}
                                 className="singleCat"
                                 onClick={() => {
-                                    push(linkValue);
+                                    // authenticatedAxios().get(linkValue).then((response)=>{
+                                    //     console.log(response)
+
+                                    // }).catch((err)=>{console.log(err);})
+                                    props.fetchMenuData(linkValueWithMenu)
+                                    push(linkValue)
+                                    push('menu')
+                                    push(linkValue)
+
                                 }}
                             >
-                                <Link to={linkValue} key={key}>
+                                <Link to={linkValue} >
                                     {value.categoryDescription}
                                 </Link>
                             </div>
@@ -41,11 +54,14 @@ const Categories = (props) => {
     );
 };
 const mapStateToProps = (state) => {
+    // console.log('categories state', state)
     return {
         isFetching: state.categoriesFetchReducer.isFetching,
         error: state.categoriesFetchReducer.error,
         categoriesArray: state.categoriesFetchReducer.categoriesArray,
+        menuArray: state.menuFetchReducer.menuArray,
+
     };
 };
 
-export default connect(mapStateToProps, { fetchDeeperMenuItems })(Categories);
+export default connect(mapStateToProps, { fetchDeeperMenuItems, fetchMenuData })(Categories);

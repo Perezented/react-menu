@@ -27,8 +27,11 @@ function App(props) {
                         <Categories />
                     </Route>
                     <Switch>
-                        <Route path="/menu">
+                        <Route exact path="/menu">
                             <AllMenuItems />
+                        </Route>
+                        <Route path='/menu/categories'>
+                        <AllMenuItems/>
                         </Route>
                         <Route path="/" />
                     </Switch>
