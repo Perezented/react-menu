@@ -8,17 +8,24 @@ function Counter(props) {
         <div className="counter">
             <button
                 onClick={() => {
-                    setCounter(counter - 1);
+                    if (counter <= 0) {
+                        setCounter(0);
+                    } else {
+                        setCounter(counter - 1);
+                    }
                 }}
             >
                 -
             </button>
-            {/* {<h6>Total: </h6>} */}
 
             <label>
-                Total:{" "}
+                <p>Total:</p>
                 <input
-                    type="integer"
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    id="counter"
                     value={counter}
                     onChange={(event) => {
                         setCounter(Math.floor(event.target.value));

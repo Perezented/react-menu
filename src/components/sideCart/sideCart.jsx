@@ -4,10 +4,25 @@ const SideCart = (props) => {
     console.log("sideCart props: ", props.cart);
     return (
         <section className="sideCart">
+            <h3>Your Shopping Cart So Far</h3>
             {props.cart.cart.length !== 0 ? (
-                console.log(props.cart.cart) && <h1>Items in cart</h1>
+                props.cart.cart.map((value, i, a) => {
+                    console.log(value);
+                    // a.forEach((aValue) => {
+                    //     console.log("loooookkkk heeeerrreee", aValue);
+                    // });
+                    return (
+                        <div key={value.menuItemID} className="orderedItem">
+                            <p>
+                                {value.amount} {value.menuItem}
+                                <br />
+                                {value.price * value.amount}
+                            </p>
+                        </div>
+                    );
+                })
             ) : (
-                <h1>No items in cart</h1>
+                <h4>No items in cart</h4>
             )}
         </section>
     );
