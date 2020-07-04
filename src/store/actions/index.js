@@ -5,6 +5,7 @@ export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 export const FETCH_CATEGORIES_START = "FETCH_CATEGORIES_START";
 export const FETCH_CATEGORIES_SUCCESS = "FETCH_CATEGORIES_SUCCESS";
 export const FETCH_CATEGORIES_FAILURE = "FETCH_CATEGORIES_FAILURE";
+export const ADD_ITEM = "ADD_ITEM";
 
 // Initial fetch of data
 export const fetchMenuData = (link) => {
@@ -61,3 +62,8 @@ export const decrement = () => {
         type: "DECREMENT",
     };
 };
+// export const addItem = (additionalPrice) => {
+//     return (dispatch) => {
+//         dispatch({ type: ADD_ITEM, payload: additionalPrice });
+//     };
+// };

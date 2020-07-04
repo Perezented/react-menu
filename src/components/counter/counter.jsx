@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 function Counter(props) {
+    console.log(props);
     let [counter, setCounter] = useState(1);
-    console.log("counter props", props, counter);
     return (
         <div className="counter">
             <button

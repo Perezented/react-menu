@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
-import { authenticatedAxios } from "../../utils/authenticatedAxios";
 import { fetchMenuData } from "../../store/actions";
 import { connect } from "react-redux";
 import Counter from "../counter/counter";
@@ -9,7 +7,6 @@ const Menu = (props) => {
     useEffect(() => {
         props.fetchMenuData("menu");
     }, []);
-    console.log("menuItems props", props);
     return (
         <section className="menuComponent">
             <h1>Welcome! All Menu Items Listed Below</h1>
@@ -19,7 +16,6 @@ const Menu = (props) => {
                 <section className="menuList">
                     {props.menuArray.foodItems &&
                         props.menuArray.foodItems.map((value, key) => {
-                            console.log(key);
                             return (
                                 <div className="menuItems" key={key}>
                                     <h4 className="categoryValue">
@@ -55,7 +51,6 @@ const Menu = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log("menu state", state);
     return {
         isFetching: state.menuFetchReducer.isFetching,
         error: state.menuFetchReducer.error,
