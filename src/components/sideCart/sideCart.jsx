@@ -29,7 +29,9 @@ const SideCart = (props) => {
             ) : (
                 <h4>No items in cart</h4>
             )}
-            {props.cart.cart.length > 0 && <h5>Total: {total}</h5>}
+            {props.cart.cart.length > 0 && (
+                <h5 className="orderedItem">Total: {total}</h5>
+            )}
             {props.cart.cart.length > 0 && <button>Submit Order</button>}
         </section>
     );
