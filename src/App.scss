@@ -6,7 +6,6 @@
     line-height: 1rem;
     height: auto;
     background-image: url("./utils/img/tanushree-rao-yj0eN2meINw-unsplash.jpg");
-
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -122,7 +121,6 @@
         align-self: start;
         .orderedItem {
             border-top: 1px solid white;
-            // border-bottom: 1px solid white;
             h5 {
                 padding: 20%;
             }
@@ -227,14 +225,16 @@
     }
 }
 .singleCat {
-    background-color: rgba(46, 46, 46, 0.75);
+    background-color: rgba(46, 46, 46, 0.835);
     margin: 2px;
     height: 5vh;
     padding-top: 2%;
-    border: 1px solid white;
+    border: 1px solid black;
     &:hover {
+        border: 1px solid rgb(78, 78, 78);
         cursor: pointer;
-        background-color: rgba(46, 46, 46, 0.1);
+        background-color: rgba(46, 46, 46, 0.6);
+        backdrop-filter: blur(2px);
     }
 }
 .allMenuButton {
@@ -246,5 +246,6 @@
         font-weight: 600;
         font-size: 1.3rem;
         text-decoration: none;
+        text-shadow: 3px 2px black;
     }
 }
