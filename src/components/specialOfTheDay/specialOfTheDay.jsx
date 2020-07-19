@@ -4,9 +4,7 @@ function SpecialOfTheDay() {
     const [editing, setEditing] = useState(false);
 
     const edit = (e) => {
-        {
-            !editing && e.preventDefault();
-        }
+        !editing && e.preventDefault();
         setEditing(!editing);
     };
 
@@ -55,7 +53,7 @@ function SpecialOfTheDay() {
                 </>
             ) : (
                 <>
-                    <h3>Editing??</h3>
+                    <h3>Specail of the Day!</h3>
                     <button onClick={edit}>Edit</button>
                 </>
             )}

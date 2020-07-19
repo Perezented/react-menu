@@ -6,6 +6,7 @@ const SideCart = (props) => {
     let total = 0;
     console.log("sideCart props: ", props);
     console.log("sideCart: ", props.cart.cart);
+
     return (
         <section className="sideCart">
             <h3>Your Shopping Cart So Far</h3>
@@ -16,15 +17,26 @@ const SideCart = (props) => {
                     // a.filter((filteredValue) => {
                     //     console.log(filteredValue);
                     // });
-                    return (
-                        <div key={value.menuItemID} className="orderedItem">
-                            <p>
-                                {value.amount} {value.menuItem}
-                                <br />
-                                {value.price * value.amount}
-                            </p>
-                        </div>
-                    );
+                    console.log("Hey kid", a);
+                    a.map((listedMenuItems) => {
+                        // console.log(listedMenuItems.menuItemID);
+                        if (listedMenuItems.menuItemID) {
+                            let totalAmt =
+                                listedMenuItems.amount + value.amount;
+                            console.log(totalAmt);
+                        }
+                    });
+                    if (true) {
+                        return (
+                            <div key={value.menuItemID} className="orderedItem">
+                                <p>
+                                    {value.amount} {value.menuItem}
+                                    <br />
+                                    {value.price * value.amount}
+                                </p>
+                            </div>
+                        );
+                    }
                 })
             ) : (
                 <h4>No items in cart</h4>
@@ -32,7 +44,15 @@ const SideCart = (props) => {
             {props.cart.cart.length > 0 && (
                 <h5 className="orderedItem">Total: {total.toFixed(2)}</h5>
             )}
-            {props.cart.cart.length > 0 && <button>Submit Order</button>}
+            {props.cart.cart.length > 0 && (
+                <button
+                    onClick={() => {
+                        console.log(props.cart);
+                    }}
+                >
+                    Submit Order
+                </button>
+            )}
         </section>
     );
 };
