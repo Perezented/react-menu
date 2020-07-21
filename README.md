@@ -7,6 +7,8 @@ There is a special of the day that the restautant has, so if the selected user i
 
 ### For Developers
 
+---
+
 ## Dependencies Used
 
 -   react
