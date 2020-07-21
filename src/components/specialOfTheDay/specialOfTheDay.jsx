@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-
-function SpecialOfTheDay() {
+import { useEffect } from "react";
+import { fetchSpecailOfTheDay } from "../../store/actions";
+import { connect } from "react-redux";
+import SOTD from "./SOTD";
+function SpecialOfTheDay(props) {
     const [editing, setEditing] = useState(false);
-
+    console.log("SOTD props:", props);
+    useEffect(() => {
+        props.fetchSpecailOfTheDay("sotd");
+    }, []);
     const edit = (e) => {
         !editing && e.preventDefault();
         setEditing(!editing);
@@ -53,11 +59,24 @@ function SpecialOfTheDay() {
                 </>
             ) : (
                 <>
-                    <h3>Specail of the Day!</h3>
+                    <h3>Special of the Day!</h3>
+                    {props.specialOfTheDayArray && (
+                        <SOTD sotdArray={props.specialOfTheDayArray} />
+                    )}
                     <button onClick={edit}>Edit</button>
                 </>
             )}
         </section>
     );
 }
-export default SpecialOfTheDay;
+
+const mapStateToProps = (state) => {
+    return {
+        isFetching: state.specialOfTheDayReducer.isFetching,
+        error: state.specialOfTheDayReducer.error,
+        specialOfTheDayArray: state.specialOfTheDayReducer.specialOfTheDayArray,
+    };
+};
+export default connect(mapStateToProps, { fetchSpecailOfTheDay })(
+    SpecialOfTheDay
+);

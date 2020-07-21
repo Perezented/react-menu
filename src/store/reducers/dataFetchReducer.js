@@ -5,7 +5,7 @@ import {
     FETCH_CATEGORIES_START,
     FETCH_CATEGORIES_SUCCESS,
     FETCH_CATEGORIES_FAILURE,
-    ADD_ITEM,
+    // ADD_ITEM,
 } from "../actions";
 
 const initialState = {
@@ -20,23 +20,6 @@ const initialStateCategories = {
     categoriesArray: "",
     menuArray: "",
 };
-// const initialTotal = {
-//     total: 0,
-//     cart: {},
-// };
-// export const totalReducer = (state = initialTotal, action) => {
-//     switch (action.type) {
-//         case ADD_ITEM:
-//             console.log(action.payload);
-//             console.log("state yoooo", state);
-//             return {
-//                 ...state,
-//                 totalPrice: state.total + action.payload,
-//             };
-//         default:
-//             return state;
-//     }
-// };
 export const menuFetchReducer = (state = initialState, action) => {
     switch (action.type) {
         // For data fetch failure
@@ -103,3 +86,20 @@ export const categoriesFetchReducer = (
             return state;
     }
 };
+// const initialTotal = {
+//     total: 0,
+//     cart: {},
+// };
+// export const totalReducer = (state = initialTotal, action) => {
+//     switch (action.type) {
+//         case ADD_ITEM:
+//             console.log(action.payload);
+//             console.log("state yoooo", state);
+//             return {
+//                 ...state,
+//                 totalPrice: state.total + action.payload,
+//             };
+//         default:
+//             return state;
+//     }
+// };
