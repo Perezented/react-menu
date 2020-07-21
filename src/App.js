@@ -9,6 +9,7 @@ import Header from "./components/header/header";
 import AllMenuItems from "./components/menuItems/menuItems";
 import SpecialOfTheDay from "./components/specialOfTheDay/specialOfTheDay";
 import Categories from "./components/categories/categories";
+import OrderDetails from "./components/orderDetails";
 
 function App(props) {
     const token = localStorage.getItem("token");
@@ -47,6 +48,9 @@ function App(props) {
                             />
                         </Route>
                         <Route path="/" />
+                        <Route exact path="/orderdetails">
+                            <OrderDetails />
+                        </Route>
                     </Switch>
                 </div>
             </div>

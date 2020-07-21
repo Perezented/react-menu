@@ -1,6 +1,5 @@
-import React from 'react'
-const orderDetails(){
-    return (
-        <div>Items</div>
-    )
+import React from "react";
+function orderDetails() {
+    return <div>Items</div>;
 }
+export default orderDetails;

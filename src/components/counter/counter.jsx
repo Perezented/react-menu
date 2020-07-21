@@ -43,6 +43,8 @@ function Counter(props) {
             <button
                 onClick={() => {
                     props.foodItem.amount = counter;
+                    console.log("in counter, props.foodItem ", props.foodItem);
+                    console.log("props", props);
                     props.addItem(props.foodItem);
                 }}
             >
