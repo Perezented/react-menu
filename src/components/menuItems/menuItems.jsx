@@ -37,6 +37,7 @@ const Menu = (props) => {
                                                 id={key + 1}
                                                 foodItem={value}
                                                 addItem={props.cart.addItem}
+                                                cart={props.cart}
                                             />
                                         </div>
                                     </div>

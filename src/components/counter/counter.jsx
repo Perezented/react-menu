@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 function Counter(props) {
-    console.log(props);
     let [counter, setCounter] = useState(1);
     return (
         <div className="counter">
@@ -42,9 +41,9 @@ function Counter(props) {
             <br />
             <button
                 onClick={() => {
+                    console.log(props.cart);
                     props.foodItem.amount = counter;
                     console.log("in counter, props.foodItem ", props.foodItem);
-                    console.log("props", props);
                     props.addItem(props.foodItem);
                 }}
             >

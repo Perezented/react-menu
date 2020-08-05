@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import SOTD from "./SOTD";
 function SpecialOfTheDay(props) {
     const [editing, setEditing] = useState(false);
-    console.log("SOTD props:", props);
     useEffect(() => {
         props.fetchSpecailOfTheDay("sotd");
     }, []);
@@ -13,7 +12,7 @@ function SpecialOfTheDay(props) {
         !editing && e.preventDefault();
         setEditing(!editing);
     };
-
+    const submitHandler = () => {};
     return (
         <section className="specialOfTheDay">
             {editing ? (
@@ -53,7 +52,7 @@ function SpecialOfTheDay(props) {
                         <br />
                     </div>
                     <div className="buttonBar">
-                        <button>Save Changes</button>
+                        <button onClick={submitHandler}>Save Changes</button>
                         <button onClick={edit}>Cancel</button>
                     </div>
                 </>

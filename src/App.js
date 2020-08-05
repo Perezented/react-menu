@@ -16,9 +16,29 @@ function App(props) {
     const [loggedIn, setLoggedIn] = useState(token && true);
     document.title = "Restaurant Menu";
     const [cart, setCart] = useState([]);
+    console.log("cart from the source: ", cart);
     function addItem(item) {
-        setCart([...cart, item]);
+        if (cart.length === 0) {
+            setCart([...cart, item]);
+        } else {
+            console.log("item", item);
+            console.log("cart", cart);
+            cart.forEach((cartItem) => {
+                if (cartItem === item) {
+                    console.log("this worked");
+                } else {
+                    setCart([...cart, item]);
+                }
+            });
+            // cart.map((value) => {
+            //     console.log("cart mapped", value);
+            //     if (value.menuItemsID === item.menuItemsID) {
+            //         setCart([...cart, item]);
+            //     }
+            // });
+        }
     }
+
     function removeItem(item) {
         setCart([
             ...cart.filter((v) => {
@@ -42,15 +62,10 @@ function App(props) {
                                 cart={{ cart, removeItem, addItem }}
                             />
                         </Route>
-                        <Route path="/categories">
-                            <AllMenuItems
-                                cart={{ cart, removeItem, addItem }}
-                            />
-                        </Route>
-                        <Route path="/" />
                         <Route exact path="/orderdetails">
                             <OrderDetails />
                         </Route>
+                        <Route path="/" />
                     </Switch>
                 </div>
             </div>

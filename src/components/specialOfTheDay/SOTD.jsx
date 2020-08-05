@@ -1,6 +1,5 @@
 import React from "react";
 function SOTD(sotdArray) {
-    console.log("SOTD props: ", sotdArray.sotdArray);
     let sotd = sotdArray.sotdArray;
     return (
         <div>
