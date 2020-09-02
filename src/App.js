@@ -11,6 +11,7 @@ import SpecialOfTheDay from "./components/specialOfTheDay/specialOfTheDay";
 import Categories from "./components/categories/categories";
 import OrderDetails from "./components/orderDetails";
 
+let dict = {};
 function App(props) {
     const token = localStorage.getItem("token");
     const [loggedIn, setLoggedIn] = useState(token && true);
@@ -18,25 +19,36 @@ function App(props) {
     const [cart, setCart] = useState([]);
     console.log("cart from the source: ", cart);
     function addItem(item) {
-        if (cart.length === 0) {
+        console.log("item", item);
+        console.log("cart", cart);
+        if (dict[item.menuItemID] === undefined) {
+            dict[item.menuItemID] = item;
+            // console.log("in dict", item);
             setCart([...cart, item]);
         } else {
-            console.log("item", item);
-            console.log("cart", cart);
-            cart.forEach((cartItem) => {
-                if (cartItem === item) {
-                    console.log("this worked");
-                } else {
-                    setCart([...cart, item]);
-                }
-            });
-            // cart.map((value) => {
-            //     console.log("cart mapped", value);
-            //     if (value.menuItemsID === item.menuItemsID) {
-            //         setCart([...cart, item]);
-            //     }
-            // });
+            dict[item.menuItemID].amount += 1;
+            console.log("nan?");
+            setCart(Object.values(dict));
         }
+        console.log("dict", Object.values(dict));
+
+        // if (cart.length === 0) {
+        //     setCart([...cart, item]);
+        // } else {
+        //     cart.forEach((cartItem) => {
+        //         if (cartItem === item) {
+        //             console.log("this worked");
+        //         } else {
+        //             setCart([...cart, item]);
+        //         }
+        //     });
+        //     // cart.map((value) => {
+        //     //     console.log("cart mapped", value);
+        //     //     if (value.menuItemsID === item.menuItemsID) {
+        //     //         setCart([...cart, item]);
+        //     //     }
+        //     // });
+        // }
     }
 
     function removeItem(item) {

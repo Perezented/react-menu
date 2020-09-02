@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 const SideCart = (props) => {
     let total = 0;
+    // let what_is_in_cart = {};
+    let key_num = 0;
 
     return (
         <section className="sideCart">
@@ -11,17 +13,21 @@ const SideCart = (props) => {
             {props.cart.cart.length !== 0 ? (
                 props.cart.cart.map((value, i, a) => {
                     total += value.price * value.amount;
+                    console.log(value);
+                    key_num += 1;
+                    // if (what_is_in_cart[value.menuItemID] === undefined) {
+                    // }
                     // a.filter((filteredValue) => {
                     // });
-                    a.map((listedMenuItems) => {
-                        if (listedMenuItems.menuItemID) {
-                            let totalAmt =
-                                listedMenuItems.amount + value.amount;
-                        }
-                    });
+                    // a.map((listedMenuItems) => {
+                    //     if (listedMenuItems.menuItemID) {
+                    //         let totalAmt =
+                    //             listedMenuItems.amount + value.amount;
+                    //     }
+                    // });
                     if (true) {
                         return (
-                            <div key={value.menuItemID} className="orderedItem">
+                            <div key={key_num} className="orderedItem">
                                 <p>
                                     {value.amount} {value.menuItem}
                                     <br />
