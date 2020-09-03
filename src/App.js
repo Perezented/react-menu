@@ -19,18 +19,19 @@ function App(props) {
     const [cart, setCart] = useState([]);
     console.log("cart from the source: ", cart);
     function addItem(item) {
-        console.log("item", item);
+        console.log("item", item.amount, item);
         console.log("cart", cart);
         if (dict[item.menuItemID] === undefined) {
             dict[item.menuItemID] = item;
             // console.log("in dict", item);
             setCart([...cart, item]);
         } else {
-            dict[item.menuItemID].amount += 1;
-            console.log("nan?");
-            setCart(Object.values(dict));
+            console.log("ITS IN DICT");
+            console.log("item and dict[item]", item, dict[item.menuItemID]);
+            console.log("dict", Object.values(dict));
+
+            // setCart(Object.values(dict));
         }
-        console.log("dict", Object.values(dict));
 
         // if (cart.length === 0) {
         //     setCart([...cart, item]);
