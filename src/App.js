@@ -11,79 +11,68 @@ import SpecialOfTheDay from "./components/specialOfTheDay/specialOfTheDay";
 import Categories from "./components/categories/categories";
 import OrderDetails from "./components/orderDetails";
 
-let dict = {};
+const dict = {};
+const old_cart = {};
 function App(props) {
-    const token = localStorage.getItem("token");
-    const [loggedIn, setLoggedIn] = useState(token && true);
-    document.title = "Restaurant Menu";
-    const [cart, setCart] = useState([]);
-    console.log("cart from the source: ", cart);
-    function addItem(item) {
-        console.log("item", item.amount, item);
-        console.log("cart", cart);
-        if (dict[item.menuItemID] === undefined) {
-            dict[item.menuItemID] = item;
-            // console.log("in dict", item);
-            setCart([...cart, item]);
-        } else {
-            console.log("ITS IN DICT");
-            console.log("item and dict[item]", item, dict[item.menuItemID]);
-            console.log("dict", Object.values(dict));
-
-            // setCart(Object.values(dict));
-        }
-
-        // if (cart.length === 0) {
-        //     setCart([...cart, item]);
-        // } else {
-        //     cart.forEach((cartItem) => {
-        //         if (cartItem === item) {
-        //             console.log("this worked");
-        //         } else {
-        //             setCart([...cart, item]);
-        //         }
-        //     });
-        //     // cart.map((value) => {
-        //     //     console.log("cart mapped", value);
-        //     //     if (value.menuItemsID === item.menuItemsID) {
-        //     //         setCart([...cart, item]);
-        //     //     }
-        //     // });
-        // }
+  for (const [key, val] of Object.entries(dict)) {
+    old_cart[key] = val;
+  }
+  const token = localStorage.getItem("token");
+  const [loggedIn, setLoggedIn] = useState(token && true);
+  document.title = "Restaurant Menu";
+  const [cart, setCart] = useState([]);
+  function addItem(item) {
+    const curr_id = item.menuItemID;
+    const curr_amt = item.amount;
+    if (dict[curr_id] === undefined) {
+      dict[curr_id] = item;
+    } else {
+      console.log(curr_amt);
+      console.log(dict[curr_id].amount);
     }
-
-    function removeItem(item) {
-        setCart([
-            ...cart.filter((v) => {
-                return v.id !== item.id;
-            }),
-        ]);
+    const curr_cart = [];
+    for (const [k, v] of Object.entries(dict)) {
+      console.log(k, v);
+      curr_cart.push(v);
     }
-    return (
-        <>
-            <div className="imgBackground" />
-            <div className="App">
-                <Header />
-                <div className="spacer">
-                    <SpecialOfTheDay />
-                    <Route path="/">
-                        <Categories />
-                    </Route>
-                    <Switch>
-                        <Route exact path="/">
-                            <AllMenuItems
-                                cart={{ cart, removeItem, addItem }}
-                            />
-                        </Route>
-                        <Route exact path="/orderdetails">
-                            <OrderDetails />
-                        </Route>
-                        <Route path="/" />
-                    </Switch>
-                </div>
-            </div>
-        </>
-    );
+    setCart(curr_cart);
+
+    console.log("cart", cart);
+    console.log("old_cart", old_cart);
+  }
+
+  function removeItem(item) {
+    setCart([
+      ...cart.filter((v) => {
+        return v.id !== item.id;
+      }),
+    ]);
+  }
+  console.log("-------------------------------------");
+
+  return (
+    <>
+      <div className="imgBackground" />
+      <div className="App">
+        <Header />
+        <div className="spacer">
+          <SpecialOfTheDay />
+          <Route path="/">
+            <Categories />
+          </Route>
+          <Switch>
+            <Route exact path="/">
+              <AllMenuItems cart={{ cart, removeItem, addItem, dict }} />
+            </Route>
+            <Route exact path="/orderdetails">
+              <OrderDetails />
+            </Route>
+            <Route path="/" />
+          </Switch>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default App;
