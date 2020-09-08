@@ -8,6 +8,10 @@ export const FETCH_CATEGORIES_FAILURE = "FETCH_CATEGORIES_FAILURE";
 export const FETCH_ORDER_DATA_START = "FETCH_ORDER_DATA_START";
 export const FETCH_ORDER_DATA_SUCCESS = "FETCH_ORDER_DATA_SUCCESS";
 export const FETCH_ORDER_DATA_FAILURE = "FETCH_ORDER_DATA_FAILURE";
+export const FETCH_SPECIALOFTHEDAY_START = "FETCH_SPECIALOFTHEDAY_START";
+export const FETCH_SPECIALOFTHEDAY_SUCCESS = "FETCH_SPECIALOFTHEDAY_SUCCESS";
+export const FETCH_SPECIALOFTHEDAY_FAILURE = "FETCH_SPECIALOFTHEDAY_FAILURE";
+
 export const ADD_ITEM = "ADD_ITEM";
 
 // Initial fetch of data
@@ -88,6 +92,29 @@ export const fetchOrderDetails = (link) => {
                 console.log(err);
                 dispatch({
                     type: FETCH_ORDER_DATA_FAILURE,
+                    payload: err,
+                });
+            });
+    };
+};
+
+//  fetch of specialOfTheDay
+export const fetchSpecailOfTheDay = (link) => {
+    return (dispatch) => {
+        dispatch({ type: FETCH_SPECIALOFTHEDAY_START });
+
+        authenticatedAxios()
+            .get(`/${link}`)
+            .then((res) => {
+                dispatch({
+                    type: FETCH_SPECIALOFTHEDAY_SUCCESS,
+                    payload: res.data,
+                });
+            })
+            .catch((err) => {
+                console.log(err);
+                dispatch({
+                    type: FETCH_SPECIALOFTHEDAY_FAILURE,
                     payload: err,
                 });
             });

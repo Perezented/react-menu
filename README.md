@@ -5,9 +5,9 @@ The site is able to add one item to the cart, or multiple by selecting from a in
 A user is also able to select menu items by category.  
 There is a special of the day that the restautant has, so if the selected user is an employee and has a login, they are able to edit the special of the day.
 
-### For Developers
-
 ---
+
+### For Developers
 
 ## Dependencies Used
 

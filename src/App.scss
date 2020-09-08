@@ -1,251 +1,256 @@
 .App {
-    text-align: center;
-    display: grid;
-    align-content: initial;
-    background-color: wheat;
-    line-height: 1rem;
-    height: auto;
-    background-image: url("./utils/img/tanushree-rao-yj0eN2meINw-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 120%;
-    background-position-x: 0;
-    background-position-y: 0;
-    height: auto;
-    .spacer {
-        padding: 11vh 12vw 0;
-    }
+  text-align: center;
+  display: grid;
+  align-content: initial;
+  background-color: wheat;
+  line-height: 1rem;
+  height: auto;
+  background-image: url("./utils/img/tanushree-rao-yj0eN2meINw-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position-x: 0;
+  background-position-y: 0;
+  height: auto;
+  .spacer {
+    padding: 11vh 12vw 0;
+  }
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .header {
-    display: grid;
-    width: 100%;
-    height: 10vh;
-    background-image: url("./utils/img/abstract-19616_1280.jpg");
-    background-size: cover;
-    background-color: rgb(104, 80, 41);
-    position: fixed;
-    z-index: 99;
-    .img {
-        width: 17vw;
-        margin-top: 16vh;
-        z-index: 100;
-    }
-    // nav {
-    //     position: fixed;
-    //     z-index: 99;
-    //     display: grid;
-    //     justify-items: left;
-    //     align-items: center;
-    //     height: 84vh;
-    //     margin-top: 12vh;
-    //     margin-left: 10vw;
-    //     border: 1px solid magenta;
-    //     border-radius: 5px;
-    //     width: 17vw;
-    //     background-color: rgb(190, 152, 90);
+  display: grid;
+  width: 100%;
+  height: 10vh;
+  background-image: url("./utils/img/abstract-19616_1280.jpg");
+  background-size: cover;
+  background-color: rgb(104, 80, 41);
+  position: fixed;
+  z-index: 99;
+  .img {
+    width: 17vw;
+    margin-top: 16vh;
+    z-index: 100;
+  }
+  // nav {
+  //     position: fixed;
+  //     z-index: 99;
+  //     display: grid;
+  //     justify-items: left;
+  //     align-items: center;
+  //     height: 84vh;
+  //     margin-top: 12vh;
+  //     margin-left: 10vw;
+  //     border: 1px solid magenta;
+  //     border-radius: 5px;
+  //     width: 17vw;
+  //     background-color: rgb(190, 152, 90);
 
-    //     h2 {
-    //         margin-left: 0.8rem;
-    //     }
-    //     a {
-    //         color: black;
-    //         font-weight: 600;
-    //         font-size: 1rem;
-    //         margin-left: 1.5rem;
-    //     }
-    // }
+  //     h2 {
+  //         margin-left: 0.8rem;
+  //     }
+  //     a {
+  //         color: black;
+  //         font-weight: 600;
+  //         font-size: 1rem;
+  //         margin-left: 1.5rem;
+  //     }
+  // }
 }
 
 .menuComponent {
-    border: 2px solid white;
-    border-bottom: 4px solid white;
-    border-right: 4px solid rgb(165, 165, 165);
-    background-color: rgba(150, 150, 150, 0.4);
-    padding: 1% 2% 3%;
-    display: grid;
-    h1 {
-        padding-bottom: 3%;
-        color: white;
-        grid-area: 1/2;
+  border: 2px solid white;
+  border-bottom: 4px solid rgb(0, 0, 0);
+  border-right: 4px solid rgb(0, 0, 0);
+  background-color: rgba(150, 150, 150, 0.4);
+  padding: 1% 2% 3%;
+  display: grid;
+  h1 {
+    padding-bottom: 3%;
+    color: white;
+    grid-area: 1/2;
+  }
+  .menuList {
+    grid-area: 2/1/2/5;
+  }
+  .sideCart {
+    font-size: 1rem;
+    color: white;
+    border: 5px ridge white;
+    padding: 2%;
+    grid-area: 2/5;
+    width: auto;
+    background: rgba(0, 0, 0, 0.465);
+    justify-self: stretch;
+    align-self: start;
+    .orderedItem {
+      border-top: 1px solid white;
+      h5 {
+        padding: 20%;
+      }
     }
-    .menuList {
-        grid-area: 2/1/2/5;
+  }
+  .categoryValue {
+    width: 10vh;
+    height: auto;
+    transform: rotate(90deg);
+    font-size: 2rem;
+    margin-bottom: 5%;
+    margin-left: -4%;
+    margin-top: 5%;
+    padding: 2% 2% 2%;
+    text-align: center;
+  }
+
+  .menuItems {
+    width: 95%;
+    margin-left: 2.5%;
+    padding: 1px 0 1%;
+    border-bottom: 1px solid white;
+    background-color: rgba(219, 196, 196, 0.6);
+    border-radius: 9% 0 4% 0%;
+
+    .menuCard {
+      width: 95%;
+      margin-top: -14%;
+      h5 {
+        padding: 1% 3% 1% 13%;
+        line-height: 1rem;
+      }
     }
-    .sideCart {
-        font-size: 1rem;
-        color: white;
-        border: 5px ridge white;
-        padding: 2%;
-        grid-area: 2/5;
+    .subMenuItems {
+      background-color: rgba(219, 196, 196, 0);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 5vh;
+      width: 85%;
+    }
+    .counter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-content: center;
+      border: 1px solid brown;
+      width: 70%;
+      input {
+        width: 75%;
+      }
+      button {
+        margin: 0 3%;
+        border-radius: 1px;
+        border: 1px solid rgb(255, 255, 255);
+        border-bottom: 2px solid rgb(44, 45, 46);
+        border-right: 2px solid rgb(72, 73, 75);
+        background-color: #00000040;
+        color: whitesmoke;
+      }
+      button:last-child {
         width: auto;
-        background: rgba(0, 0, 0, 0.465);
-        justify-self: stretch;
-        align-self: start;
-        .orderedItem {
-            border-top: 1px solid white;
-            h5 {
-                padding: 20%;
-            }
-        }
-    }
-    .categoryValue {
-        width: 10vh;
-        height: auto;
-        transform: rotate(90deg);
-        font-size: 2rem;
-        margin-bottom: 5%;
-        margin-left: -4%;
-        margin-top: 5%;
-        padding: 2% 2% 2%;
+        padding: 1%;
+      }
+      label {
+        display: flex;
+        width: 6rem;
+        align-content: center;
+        justify-content: center;
+      }
+      input {
         text-align: center;
+        align-self: center;
+        margin: 0 5%;
+      }
     }
-
-    .menuItems {
-        width: 95%;
-        margin-left: 2.5%;
-        padding: 1px 0 1%;
-        border-bottom: 1px solid white;
-        background-color: rgba(219, 196, 196, 0.6);
-        border-radius: 9% 0 4% 0%;
-
-        .menuCard {
-            width: 95%;
-            margin-top: -14%;
-            h5 {
-                padding: 1% 3% 1% 13%;
-                line-height: 1rem;
-            }
-        }
-        .subMenuItems {
-            background-color: rgba(219, 196, 196, 0);
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 5vh;
-            width: 85%;
-        }
-        .counter {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            align-content: center;
-            border: 1px solid brown;
-            width: 70%;
-            input {
-                width: 75%;
-            }
-            button {
-                margin: 0 3%;
-                border-radius: 1px;
-                border: 1px solid grey;
-                border-bottom: 2px solid slategray;
-                border-right: 2px solid slategray;
-            }
-            button:last-child {
-                width: auto;
-            }
-            label {
-                display: flex;
-                width: 6rem;
-                align-content: center;
-                justify-content: center;
-            }
-            input {
-                text-align: center;
-                align-self: center;
-                margin: 0 5%;
-            }
-        }
-    }
+  }
 }
 .specialOfTheDay {
-    align-self: start;
-    text-align: center;
-    display: grid;
-    background-color: rgba(219, 196, 196, 0.6);
+  align-self: start;
+  text-align: center;
+  display: grid;
+  background-color: rgba(219, 196, 196, 0.6);
 
-    .sotdInputs {
-        width: fit-content;
-        text-align: right;
-        margin: 0 auto;
-    }
+  .sotdInputs {
+    width: fit-content;
+    text-align: right;
+    margin: 0 auto;
+  }
 
-    button {
-        width: fit-content;
-        justify-self: center;
-    }
+  button {
+    width: fit-content;
+    justify-self: center;
+  }
 }
 .categories {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    line-height: 2rem;
-    a {
-        color: white;
-        font-weight: 600;
-        font-size: 1.3rem;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  line-height: 2rem;
+  a {
+    color: white;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
 }
 .singleCat {
-    background-color: rgba(46, 46, 46, 0.835);
-    margin: 2px;
-    height: 5vh;
-    padding-top: 2%;
-    border: 1px solid black;
-    &:hover {
-        border: 1px solid rgb(78, 78, 78);
-        cursor: pointer;
-        background-color: rgba(46, 46, 46, 0.6);
-        backdrop-filter: blur(2px);
-    }
+  background-color: rgba(46, 46, 46, 0.835);
+  margin: 2px;
+  height: 5vh;
+  padding-top: 2%;
+  border: 1px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(99, 99, 99);
+  border-right: 2px solid rgb(99, 99, 99);
+  &:hover {
+    border: 1px solid rgb(78, 78, 78);
+    cursor: pointer;
+    background-color: rgba(46, 46, 46, 0.6);
+    backdrop-filter: blur(2px);
+  }
 }
 .allMenuButton {
-    width: 20vw;
-    height: 2rem;
-    margin: 4px auto;
-    a {
-        color: white;
-        font-weight: 600;
-        font-size: 1.3rem;
-        text-decoration: none;
-        text-shadow: 3px 2px black;
-    }
+  width: 20vw;
+  height: 2rem;
+  margin: 4px auto;
+  a {
+    color: white;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-shadow: 3px 2px black;
+  }
 }
