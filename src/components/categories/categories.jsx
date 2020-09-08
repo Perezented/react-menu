@@ -47,10 +47,7 @@ const Categories = (props) => {
                   // push(linkValue);
                 }}
               >
-                <Link to={linkValue}>
-                  {console.log(value.category)}
-                  {value.category}
-                </Link>
+                <Link to={linkValue}>{value.categoryDescription}</Link>
               </div>
             );
           })
