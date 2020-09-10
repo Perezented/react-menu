@@ -25,15 +25,17 @@ const SideCart = (props) => {
           //     }
           // });
           if (true) {
-            return (
-              <div key={key_num} className="orderedItem">
-                <p>
-                  {value.amount} {value.menuItem}
-                  <br />
-                  {value.price * value.amount}
-                </p>
-              </div>
-            );
+            if (value.amount !== 0) {
+              return (
+                <div key={key_num} className="orderedItem">
+                  <p>
+                    {value.amount} {value.menuItem}
+                    <br />
+                    {value.price * value.amount}
+                  </p>
+                </div>
+              );
+            }
           }
         })
       ) : (
