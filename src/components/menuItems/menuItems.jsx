@@ -3,6 +3,7 @@ import { fetchMenuData } from "../../store/actions";
 import { connect } from "react-redux";
 import Counter from "../counter/counter";
 import SideCart from "../sideCart/sideCart";
+import LoaderComp from "../loader/loaderComp";
 const Menu = (props) => {
   useEffect(() => {
     props.fetchMenuData("menu");
@@ -11,7 +12,7 @@ const Menu = (props) => {
     <section className="menuComponent">
       <h1>Welcome! All Menu Items Listed Below</h1>
       {!props.menuArray ? (
-        <h3>Loading, please wait...</h3>
+        <LoaderComp />
       ) : (
         <section className="menuList">
           {props.menuArray.foodItems &&

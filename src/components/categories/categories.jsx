@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import { authenticatedAxios } from "../../utils/authenticatedAxios";
 import { connect } from "react-redux";
 import { fetchMenuData } from "../../store/actions";
+import LoaderComp from "../loader/loaderComp";
 
 const Categories = (props) => {
   const { push } = useHistory();
@@ -27,7 +28,7 @@ const Categories = (props) => {
       </div>{" "}
       <div className="categories">
         {!props.categoriesArray ? (
-          <h3>Loading, Please Wait...</h3>
+          <LoaderComp />
         ) : (
           props.categoriesArray.categories.map((value, key) => {
             const linkValue = `categories?filter=${value.category}`;

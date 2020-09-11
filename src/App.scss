@@ -54,6 +54,13 @@
   }
 }
 
+.loaderComp {
+  text-align: center;
+  margin: 0 auto;
+  h3 {
+    color: white;
+  }
+}
 .header {
   display: grid;
   width: 100%;
@@ -68,30 +75,6 @@
     margin-top: 16vh;
     z-index: 100;
   }
-  // nav {
-  //     position: fixed;
-  //     z-index: 99;
-  //     display: grid;
-  //     justify-items: left;
-  //     align-items: center;
-  //     height: 84vh;
-  //     margin-top: 12vh;
-  //     margin-left: 10vw;
-  //     border: 1px solid magenta;
-  //     border-radius: 5px;
-  //     width: 17vw;
-  //     background-color: rgb(190, 152, 90);
-
-  //     h2 {
-  //         margin-left: 0.8rem;
-  //     }
-  //     a {
-  //         color: black;
-  //         font-weight: 600;
-  //         font-size: 1rem;
-  //         margin-left: 1.5rem;
-  //     }
-  // }
 }
 
 .menuComponent {

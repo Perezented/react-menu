@@ -41,10 +41,6 @@ function Counter(props) {
       <br />
       <button
         onClick={() => {
-          console.log(props.cart.dict);
-          console.log("BUTTON CLICKED");
-          console.log("SEEEEE", props.foodItem, counter);
-          console.log(props);
           props.foodItem.amount = counter;
           props.addItem(props.foodItem);
         }}
