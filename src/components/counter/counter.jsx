@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function Counter(props) {
   let [counter, setCounter] = useState(1);
+  const thatCartItem = props.cart.dict[props.foodItem.menuItemID];
   return (
     <div className="counter">
       <button
@@ -45,9 +46,13 @@ function Counter(props) {
           props.addItem(props.foodItem);
         }}
       >
-        {props.cart.dict[props.foodItem.menuItemID]
-          ? "Update Cart"
-          : "Add to cart"}
+        {thatCartItem
+          ? counter > 0
+            ? "Update"
+            : thatCartItem.amount == 0
+            ? "Removed!"
+            : "Remove"
+          : "Add"}
       </button>
     </div>
   );
