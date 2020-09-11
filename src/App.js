@@ -9,7 +9,7 @@ import Header from "./components/header/header";
 import AllMenuItems from "./components/menuItems/menuItems";
 import SpecialOfTheDay from "./components/specialOfTheDay/specialOfTheDay";
 import Categories from "./components/categories/categories";
-import OrderDetails from "./components/orderDetails";
+import OrderDetails from "./components/orderDetails/orderDetails";
 
 const dict = {};
 const old_cart = {};
