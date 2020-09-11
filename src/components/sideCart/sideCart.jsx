@@ -4,6 +4,7 @@ import { pushData } from "../../store/actions/index";
 
 const SideCart = (props) => {
   console.log(props);
+  console.log(window);
   useEffect(() => {
     props.pushData();
   }, [props.pushData]);
@@ -16,7 +17,6 @@ const SideCart = (props) => {
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   const time =
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  const orderNumber = today.getMilliseconds();
   const dateTime = date + " " + time;
   function makeObj(dictionary) {
     Object.keys(dictionary).forEach(function (key) {
@@ -26,7 +26,7 @@ const SideCart = (props) => {
         item["menuItemID"] = dictionary[key].menuItemID;
         item["quantity"] = dictionary[key].amount;
         item["created_at"] = dateTime;
-        item["orderID"] = orderNumber;
+        item["orderID"] = Date.now() + "." + dateTime;
         console.log(item);
         props.pushData(item);
       }

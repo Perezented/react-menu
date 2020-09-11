@@ -18,7 +18,7 @@ function App(props) {
     old_cart[key] = val;
   }
   const token = localStorage.getItem("token");
-  const [loggedIn, setLoggedIn] = useState(token && true);
+  // const [loggedIn, setLoggedIn] = useState(token && true);
   document.title = "Restaurant Menu";
   const [cart, setCart] = useState([]);
   function addItem(item) {
@@ -27,18 +27,12 @@ function App(props) {
     if (dict[curr_id] === undefined) {
       dict[curr_id] = item;
     } else {
-      console.log(curr_amt);
-      console.log(dict[curr_id].amount);
     }
     const curr_cart = [];
     for (const [k, v] of Object.entries(dict)) {
-      console.log(k, v);
       curr_cart.push(v);
     }
     setCart(curr_cart);
-
-    console.log("cart", cart);
-    console.log("old_cart", old_cart);
   }
 
   function removeItem(item) {
@@ -48,8 +42,6 @@ function App(props) {
       }),
     ]);
   }
-  console.log("-------------------------------------");
-
   return (
     <>
       <div className="imgBackground" />

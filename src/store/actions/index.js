@@ -1,4 +1,5 @@
 import { authenticatedAxios } from "../../utils/authenticatedAxios";
+import Axios from "axios";
 export const FETCH_DATA_START = "FETCH_DATA_START";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
@@ -127,8 +128,7 @@ export const pushData = (newOrder) => {
   return (dispatch) => {
     dispatch({ type: PUSH_ORDER_START });
 
-    authenticatedAxios()
-      .post("http://localhost:5678/orderDetails", newOrder)
+    Axios.post("http://localhost:5678/orderDetails", newOrder)
       .then((res) => {
         console.log(res);
         dispatch({
