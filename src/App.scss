@@ -164,10 +164,13 @@
         border-right: 2px solid rgb(72, 73, 75);
         background-color: #00000040;
         color: whitesmoke;
+        padding: 1% 2%;
+        &:hover {
+          background-color: #00000070;
+        }
       }
       button:last-child {
         width: auto;
-        padding: 1%;
       }
       label {
         display: flex;
