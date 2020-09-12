@@ -128,7 +128,8 @@ export const pushData = (newOrder) => {
   return (dispatch) => {
     dispatch({ type: PUSH_ORDER_START });
 
-    Axios.post("http://localhost:5678/orderDetails", newOrder)
+    authenticatedAxios()
+      .post("/orderDetails", newOrder)
       .then((res) => {
         console.log(res);
         dispatch({
