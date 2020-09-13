@@ -3,11 +3,7 @@ import { connect } from "react-redux";
 import { pushData } from "../../store/actions/index";
 
 const SideCart = (props) => {
-  useEffect(() => {
-    props.pushData();
-  }, [props.pushData]);
   let total = 0;
-  // let what_is_in_cart = {};
   let key_num = 0;
   let curr_dict = props.cart.dict;
   const today = new Date();
