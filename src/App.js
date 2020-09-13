@@ -10,6 +10,7 @@ import AllMenuItems from "./components/menuItems/menuItems";
 import SpecialOfTheDay from "./components/specialOfTheDay/specialOfTheDay";
 import Categories from "./components/categories/categories";
 import OrderDetails from "./components/orderDetails/orderDetails";
+import Welcome from "./components/Welcome/Welcome";
 
 const dict = {};
 const old_cart = {};
@@ -49,6 +50,9 @@ function App(props) {
         <Header />
         <div className="spacer">
           <SpecialOfTheDay />
+          <Route exact path="/">
+            <Welcome />
+          </Route>
           <Route exact path="/">
             <Categories />
           </Route>
