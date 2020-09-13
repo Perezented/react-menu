@@ -49,7 +49,7 @@ function App(props) {
         <Header />
         <div className="spacer">
           <SpecialOfTheDay />
-          <Route path="/">
+          <Route exact path="/">
             <Categories />
           </Route>
           <Switch>

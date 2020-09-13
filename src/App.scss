@@ -77,7 +77,8 @@
   }
 }
 
-.menuComponent {
+.menuComponent,
+.orders {
   border: 2px solid white;
   border-bottom: 4px solid rgb(0, 0, 0);
   border-right: 4px solid rgb(0, 0, 0);
@@ -211,20 +212,20 @@
     font-weight: 600;
     font-size: 1.3rem;
   }
-}
-.singleCat {
-  background-color: rgba(46, 46, 46, 0.835);
-  margin: 2px;
-  height: 5vh;
-  padding-top: 2%;
-  border: 1px solid rgb(255, 255, 255);
-  border-bottom: 2px solid rgb(99, 99, 99);
-  border-right: 2px solid rgb(99, 99, 99);
-  &:hover {
-    border: 1px solid rgb(78, 78, 78);
-    cursor: pointer;
-    background-color: rgba(46, 46, 46, 0.6);
-    backdrop-filter: blur(2px);
+  .singleCat {
+    background-color: rgba(46, 46, 46, 0.835);
+    margin: 2px;
+    height: 5vh;
+    padding-top: 2%;
+    border: 1px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(99, 99, 99);
+    border-right: 2px solid rgb(99, 99, 99);
+    &:hover {
+      border: 1px solid rgb(78, 78, 78);
+      cursor: pointer;
+      background-color: rgba(46, 46, 46, 0.6);
+      backdrop-filter: blur(2px);
+    }
   }
 }
 .allMenuButton {
