@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import { authenticatedAxios } from "../../utils/authenticatedAxios";
 import { connect } from "react-redux";
 import { fetchMenuData } from "../../store/actions";
-import LoaderComp from "../loader/loaderComp";
+import LoaderComp from "../loader/LoaderComp";
 
 const Categories = (props) => {
   const { push } = useHistory();
