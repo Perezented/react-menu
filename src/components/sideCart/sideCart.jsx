@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { pushData } from "../../store/actions/index";
 
 const SideCart = (props) => {
-  console.log(props);
-  console.log(window);
   useEffect(() => {
     props.pushData();
   }, [props.pushData]);
@@ -28,6 +26,7 @@ const SideCart = (props) => {
         item["created_at"] = dateTime;
         item["orderID"] = Date.now() + "." + dateTime;
         console.log(item);
+
         props.pushData(item);
       }
       // dictionary.preventDefault();

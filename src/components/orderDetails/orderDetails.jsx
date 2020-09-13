@@ -2,20 +2,31 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchOrderDetails } from "../../store/actions";
 import { useEffect } from "react";
-
+import LoaderComp from "../loader/LoaderComp";
+let orders = {};
 class orderDetails extends React.Component {
   componentDidMount() {
     this.props.fetchOrderDetails("orderDetails");
+    this.props.orderDetailsArray &&
+      this.props.orderDetailsArray.orders.map((k, v) => {
+        if (k.orderID in orders) {
+          orders[k.orderID].push(k);
+        } else {
+          orders[k.orderID] = [];
+          orders[k.orderID].push(k);
+        }
+        console.log(orders);
+      });
   }
-  componentDidUpdate() {
-    console.log(this.props);
-  }
+
   render() {
     return (
-      <section>
-        <div>
-          <h1>test</h1>
-        </div>
+      <section className="orders">
+        {" "}
+        {this.props.orderDetailsArray
+          ? console.log(this.props.orderDetailsArray)
+          : // console.log(orders)
+            ((<LoaderComp />), console.log(window))}
       </section>
     );
   }
