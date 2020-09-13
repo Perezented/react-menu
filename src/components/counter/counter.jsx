@@ -48,8 +48,10 @@ function Counter(props) {
       >
         {thatCartItem
           ? counter > 0
-            ? "Update"
-            : thatCartItem.amount == 0
+            ? thatCartItem.amount === counter
+              ? "In Cart"
+              : "Update"
+            : thatCartItem.amount === 0
             ? "Removed!"
             : "Remove"
           : "Add"}
