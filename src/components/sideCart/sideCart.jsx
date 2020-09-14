@@ -6,6 +6,7 @@ const SideCart = (props) => {
   let total = 0;
   let key_num = 0;
   let curr_dict = props.cart.dict;
+  console.log(props);
   const today = new Date();
   const date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
@@ -13,6 +14,8 @@ const SideCart = (props) => {
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   const dateTime = date + " " + time;
   function makeObj(dictionary) {
+    let total_order = [];
+    const uniqueID = Math.floor(Math.random() * 10000000000000000);
     Object.keys(dictionary).forEach(function (key) {
       if (dictionary[key].amount !== 0) {
         let item = {};
@@ -20,13 +23,15 @@ const SideCart = (props) => {
         item["menuItemID"] = dictionary[key].menuItemID;
         item["quantity"] = dictionary[key].amount;
         item["created_at"] = dateTime;
-        item["orderID"] = Date.now() + "." + dateTime;
+        item["orderID"] = dateTime + "~~" + uniqueID;
         console.log(item);
 
-        props.pushData(item);
+        total_order.push(item);
       }
+
       // dictionary.preventDefault();
     });
+    props.pushData(total_order);
   }
   return (
     <section className="sideCart">
