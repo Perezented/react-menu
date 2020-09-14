@@ -6,7 +6,7 @@ export default class LoaderComp extends React.Component {
     return (
       <div className="loaderComp">
         <h3>Loading, Please Wait...</h3>
-        <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />{" "}
+        <Loader type="TailSpin" color="#00BFEF" height={80} width={80} />{" "}
       </div>
     );
   }
