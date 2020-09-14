@@ -83,64 +83,39 @@
   background-color: rgba(219, 196, 196, 0.801);
 }
 
-.menuComponent,
-.orders {
+@mixin niceView {
   border: 2px solid white;
   border-bottom: 4px solid rgb(0, 0, 0);
   border-right: 4px solid rgb(0, 0, 0);
   background-color: rgba(150, 150, 150, 0.4);
   padding: 1% 2% 3%;
-  display: grid;
+  .orderSlice {
+    @include menuSlice;
+  }
   h1 {
     padding-bottom: 3%;
     color: white;
     grid-area: 1/2;
   }
-  .menuList {
-    grid-area: 2/1/2/5;
-  }
-  .sideCart {
-    font-size: 1rem;
-    color: white;
-    border: 5px ridge white;
-    padding: 2%;
-    grid-area: 2/5;
-    width: auto;
-    background: rgba(0, 0, 0, 0.465);
-    justify-self: stretch;
-    align-self: start;
-    .orderedItem {
-      border-top: 1px solid white;
-      h5 {
-        padding: 20%;
-      }
-    }
-  }
-  .categoryValue {
-    width: 10vh;
-    height: auto;
-    transform: rotate(90deg);
-    font-size: 2rem;
-    margin-bottom: 5%;
-    margin-left: -4%;
-    margin-top: 5%;
-    padding: 2% 2% 2%;
-    text-align: center;
-  }
-
+}
+@mixin menuSlice {
+  width: 95%;
+  margin-left: 2.5%;
+  padding: 1px 0 1%;
+  border-bottom: 1px solid white;
+  background-color: rgba(219, 196, 196, 0.6);
+  border-radius: 9% 0 4% 0%;
+}
+@mixin menuView {
   .menuItems {
-    width: 95%;
-    margin-left: 2.5%;
-    padding: 1px 0 1%;
-    border-bottom: 1px solid white;
-    background-color: rgba(219, 196, 196, 0.6);
-    border-radius: 9% 0 4% 0%;
-
+    @include menuSlice;
     .menuCard {
       width: 95%;
       margin-top: -14%;
       h5 {
-        padding: 1% 3% 1% 13%;
+        width: 85%;
+        margin: auto;
+        // padding: 1% 3% 1% 8%;
         line-height: 1rem;
       }
     }
@@ -191,6 +166,53 @@
       }
     }
   }
+}
+.orders {
+  @include niceView;
+  @include menuView;
+}
+@mixin rotated {
+  width: 10vh;
+  height: auto;
+  transform: rotate(90deg);
+  font-size: 2rem;
+  text-align: center;
+}
+.menuComponent {
+  @include niceView;
+  @include menuView;
+  display: grid;
+  .menuList {
+    grid-area: 2/1/2/5;
+  }
+  .sideCart {
+    font-size: 1rem;
+    color: white;
+    border: 5px ridge white;
+    padding: 2%;
+    grid-area: 2/5;
+    width: auto;
+    background: rgba(0, 0, 0, 0.465);
+    justify-self: stretch;
+    align-self: start;
+    .orderedItem {
+      border-top: 1px solid white;
+      h5 {
+        padding: 20%;
+      }
+    }
+  }
+  .categoryValue {
+    @include rotated;
+    margin-bottom: 5%;
+    margin-left: -4%;
+    margin-top: 5%;
+    padding: 2% 2% 2%;
+  }
+}
+.totalRotated {
+  @include rotated;
+  margin: 5% 0 -3%;
 }
 .specialOfTheDay {
   align-self: start;
