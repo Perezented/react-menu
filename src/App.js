@@ -18,13 +18,12 @@ function App(props) {
   for (const [key, val] of Object.entries(dict)) {
     old_cart[key] = val;
   }
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
   // const [loggedIn, setLoggedIn] = useState(token && true);
   document.title = "Restaurant Menu";
   const [cart, setCart] = useState([]);
   function addItem(item) {
     const curr_id = item.menuItemID;
-    const curr_amt = item.amount;
     if (dict[curr_id] === undefined) {
       dict[curr_id] = item;
     } else {
