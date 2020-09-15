@@ -18,7 +18,7 @@ function App(props) {
   for (const [key, val] of Object.entries(dict)) {
     old_cart[key] = val;
   }
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
   // const [loggedIn, setLoggedIn] = useState(token && true);
   document.title = "Restaurant Menu";
   const [cart, setCart] = useState([]);
