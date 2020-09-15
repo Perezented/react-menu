@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchOrderDetails } from "../../store/actions";
-import LoaderComp from "../loader/LoaderComp";
+import LoaderComp from "../loader";
 let orders = {};
 class orderDetails extends React.Component {
   componentDidMount() {

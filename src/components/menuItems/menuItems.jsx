@@ -3,7 +3,7 @@ import { fetchMenuData } from "../../store/actions";
 import { connect } from "react-redux";
 import Counter from "../counter/counter";
 import SideCart from "../sideCart/sideCart";
-import LoaderComp from "../loader/LoaderComp";
+import LoaderComp from "../loader";
 const Menu = (props) => {
   useEffect(() => {
     props.fetchMenuData("menu");

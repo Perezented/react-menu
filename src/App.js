@@ -24,7 +24,6 @@ function App(props) {
   const [cart, setCart] = useState([]);
   function addItem(item) {
     const curr_id = item.menuItemID;
-    const curr_amt = item.amount;
     if (dict[curr_id] === undefined) {
       dict[curr_id] = item;
     } else {
