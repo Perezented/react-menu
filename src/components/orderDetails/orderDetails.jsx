@@ -40,6 +40,8 @@ class orderDetails extends React.Component {
                       <div className="menuCard">
                         <h2>{value.menuItem}</h2>
                         <h5> {value.description} </h5>
+                        <h4>Amount: {value.quantity}</h4>
+                        <p>Sent on: {value.created_at}</p>
                         <div className="submenuItems">
                           <p>$ {value.price} </p>
                         </div>

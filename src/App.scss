@@ -91,6 +91,7 @@
   padding: 1% 2% 3%;
   .orderSlice {
     @include menuSlice;
+    padding: 1px 0 1%;
   }
   h1 {
     padding-bottom: 3%;
@@ -101,13 +102,14 @@
 @mixin menuSlice {
   width: 95%;
   margin-left: 2.5%;
-  padding: 1px 0 1%;
   border-bottom: 1px solid white;
   background-color: rgba(219, 196, 196, 0.6);
   border-radius: 9% 0 4% 0%;
 }
 @mixin menuView {
   .menuItems {
+    padding: 1% 0 4%;
+
     @include menuSlice;
     .menuCard {
       width: 95%;
@@ -240,25 +242,25 @@
     font-weight: 600;
     font-size: 1.3rem;
   }
-  .singleCat {
-    background-color: rgba(46, 46, 46, 0.835);
-    margin: 2px;
-    height: 5vh;
-    padding-top: 2%;
-    border: 1px solid rgb(255, 255, 255);
-    border-bottom: 2px solid rgb(99, 99, 99);
-    border-right: 2px solid rgb(99, 99, 99);
-    &:hover {
-      border: 1px solid rgb(78, 78, 78);
-      cursor: pointer;
-      background-color: rgba(46, 46, 46, 0.6);
-      backdrop-filter: blur(2px);
-    }
+}
+.singleCat {
+  background-color: rgba(46, 46, 46, 0.835);
+  margin: 2px;
+  height: 5vh;
+  padding-top: 2%;
+  border: 1px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(99, 99, 99);
+  border-right: 2px solid rgb(99, 99, 99);
+  &:hover {
+    border: 1px solid rgb(78, 78, 78);
+    cursor: pointer;
+    background-color: rgba(46, 46, 46, 0.6);
+    backdrop-filter: blur(2px);
   }
 }
 .allMenuButton {
   width: 20vw;
-  height: 2rem;
+  height: 4vh;
   margin: 4px auto;
   a {
     color: white;
