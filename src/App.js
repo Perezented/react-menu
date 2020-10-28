@@ -11,6 +11,7 @@ import SpecialOfTheDay from "./components/specialOfTheDay/specialOfTheDay";
 import Categories from "./components/categories/categories";
 import OrderDetails from "./components/orderDetails/orderDetails";
 import Welcome from "./components/Welcome/Welcome";
+import HomePage from "./components/home/homepage";
 
 const dict = {};
 const old_cart = {};
@@ -39,33 +40,41 @@ function App(props) {
     setCart([
       ...cart.filter((v) => {
         return v.id !== item.id;
-      }),
+      })
     ]);
   }
   return (
     <>
-      <div className="imgBackground" />
-      <div className="App">
-        <Header />
-        <div className="spacer">
-          <SpecialOfTheDay />
-          <Route exact path="/">
-            <Welcome />
-          </Route>
-          <Route exact path="/">
-            <Categories />
-          </Route>
-          <Switch>
-            <Route exact path="/">
-              <AllMenuItems cart={{ cart, removeItem, addItem, dict }} />
-            </Route>
-            <Route exact path="/orderdetails">
-              <OrderDetails />
-            </Route>
-            <Route path="/" />
-          </Switch>
+      <Route exact path="/">
+        <div className="App">
+          <Header />
         </div>
-      </div>
+        <HomePage />
+      </Route>
+      <div className="imgBackground" />
+      <Route path="/order">
+        <div className="App">
+          <Header />
+          <div className="spacer">
+            <Route exact path="/order">
+              <SpecialOfTheDay />
+              <Welcome />
+            </Route>
+            <Route exact path="/order">
+              <Categories />
+            </Route>
+            <Switch>
+              <Route exact path="/order">
+                <AllMenuItems cart={{ cart, removeItem, addItem, dict }} />
+              </Route>
+              <Route exact path="/orderdetails">
+                <OrderDetails />
+              </Route>
+              <Route path="/order" />
+            </Switch>
+          </div>
+        </div>
+      </Route>
     </>
   );
 }
