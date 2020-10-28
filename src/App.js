@@ -46,9 +46,6 @@ function App(props) {
   return (
     <>
       <Route exact path="/">
-        <div className="App">
-          <Header />
-        </div>
         <HomePage />
       </Route>
       <div className="imgBackground" />

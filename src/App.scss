@@ -58,10 +58,30 @@
   background: url("./utils/img/andres-sanz-uILhNE1VcwA-unsplash.jpg");
   background-size: cover;
   background-position-x: right;
-  height: 90vh;
-  padding-top: 10vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   div {
-    background: rgba(255, 255, 255, 0.336);
+    background: rgba(255, 255, 255, 0.636);
+  }
+  div:nth-child(3) {
+    text-align: center;
+    padding: 2%;
+    button {
+      margin: 0 3%;
+      border-radius: 1px;
+      border: 1px solid rgb(255, 255, 255);
+      border-bottom: 2px solid rgb(44, 45, 46);
+      border-right: 2px solid rgb(72, 73, 75);
+      background-color: #00000080;
+      color: whitesmoke;
+      font-weight: 700;
+      padding: 10px 2%;
+      &:hover {
+        background-color: #00000070;
+      }
+    }
   }
   h1 {
     padding: 3% 5% 0;
@@ -69,8 +89,13 @@
   }
   h2 {
     font-size: 3rem;
-    padding: 0 3% 3%;
+    padding: 0 3%;
   }
+  h3 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  border: 5px solid red;
 }
 
 .loaderComp {
