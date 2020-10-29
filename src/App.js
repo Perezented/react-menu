@@ -43,11 +43,11 @@ function App(props) {
   }
   return (
     <>
+      <Header />
       <Route exact path="/">
         <HomePage />
       </Route>
       <div className="App">
-        <Header />
         <Route path="/order">
           <div className="spacer">
             <SpecialOfTheDay />
@@ -70,9 +70,8 @@ function App(props) {
           </div>
           <OrderDetails />
         </Route>
-      </div>{" "}
+      </div>
     </>
   );
 }
 export default App;
-//<span>Photo by <a href="https://unsplash.com/@timothylbrock?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Timothy L Brock</a> on <a href="https://unsplash.com/s/photos/mexican-food?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
