@@ -17,11 +17,11 @@ const Categories = (props) => {
       <div
         className="singleCat allMenuButton"
         onClick={() => {
-          push("/");
+          push("/order");
           props.fetchMenuData("menu");
         }}
       >
-        <Link to="/">All Menu Items</Link>{" "}
+        <Link to="/order">All Menu Items</Link>{" "}
       </div>{" "}
       <div className="categories">
         {!props.categoriesArray ? (
@@ -52,11 +52,11 @@ const mapStateToProps = (state) => {
     isFetching: state.categoriesFetchReducer.isFetching,
     error: state.categoriesFetchReducer.error,
     categoriesArray: state.categoriesFetchReducer.categoriesArray,
-    menuArray: state.menuFetchReducer.menuArray,
+    menuArray: state.menuFetchReducer.menuArray
   };
 };
 
 export default connect(mapStateToProps, {
   fetchDeeperMenuItems,
-  fetchMenuData,
+  fetchMenuData
 })(Categories);
