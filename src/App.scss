@@ -53,49 +53,53 @@
     transform: rotate(360deg);
   }
 }
-
-.homepage {
-  background: url("./utils/img/andres-sanz-uILhNE1VcwA-unsplash.jpg");
-  background-size: cover;
-  background-position-x: right;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  div {
-    background: rgba(255, 255, 255, 0.636);
+.slider {
+  padding-top: 5vh;
+  text-align: center;
+  height: 60vh;
+  overflow: hidden;
+  .img0 {
+    margin-top: -10vh;
   }
-  div:nth-child(3) {
-    text-align: center;
-    padding: 2%;
-    button {
-      margin: 0 3%;
-      border-radius: 1px;
-      border: 1px solid rgb(255, 255, 255);
-      border-bottom: 2px solid rgb(44, 45, 46);
-      border-right: 2px solid rgb(72, 73, 75);
-      background-color: #00000080;
-      color: whitesmoke;
-      font-weight: 700;
-      padding: 10px 2%;
-      &:hover {
-        background-color: #00000070;
-      }
+  img {
+    height: 120vh;
+    width: 90vw;
+    margin-top: -50vh;
+  }
+}
+.homepageImg {
+  background: url("./utils/img/andres-sanz-uILhNE1VcwA-unsplash.jpg");
+  filter: blur(3px);
+  background-position-y: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+}
+.fluff {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.homepage {
+  color: white;
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  text-shadow: 0 0 5px black, 0 0 6px white, 0 0 7px black;
+  .homepageHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-size: 3rem;
     }
   }
-  h1 {
-    padding: 3% 5% 0;
-    font-size: 4rem;
-  }
-  h2 {
-    font-size: 3rem;
-    padding: 0 3%;
-  }
   h3 {
-    font-size: 2.4rem;
-    text-align: center;
+    font-size: 2.3rem;
   }
-  border: 5px solid red;
 }
 
 .loaderComp {
@@ -106,18 +110,31 @@
   }
 }
 .header {
-  display: grid;
+  flex-direction: row;
   width: 100%;
   height: 10vh;
-  background-image: url("./utils/img/abstract-19616_1280.jpg");
+  background-image: url("./utils/img/wood-591631_1920.jpg");
+  background-position-y: top;
+  filter: brightness(120%);
   background-size: cover;
   background-color: rgb(104, 80, 41);
   position: fixed;
   z-index: 99;
-  .img {
-    width: 17vw;
-    margin-top: 16vh;
-    z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+  div {
+    overflow: hidden;
+    height: 10vh;
+
+    img {
+      height: 16vh;
+      margin: -20% 0;
+    }
   }
 }
 
