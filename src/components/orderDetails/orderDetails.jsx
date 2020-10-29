@@ -60,7 +60,7 @@ const mapStateToProps = (state) => {
   return {
     isFetching: state.orderDetailsReducer.isFetching,
     error: state.orderDetailsReducer.error,
-    orderDetailsArray: state.orderDetailsReducer.orderDetailsArray,
+    orderDetailsArray: state.orderDetailsReducer.orderDetailsArray
   };
 };
 
