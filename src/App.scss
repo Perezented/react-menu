@@ -70,8 +70,8 @@
 .homepageImg {
   background: url("./utils/img/andres-sanz-uILhNE1VcwA-unsplash.jpg");
   filter: blur(3px);
-  background-position-y: center;
-  background-size: cover;
+  background-position-y: bottom;
+  background-size: 120%;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -80,25 +80,48 @@
   z-index: -1;
 }
 .fluff {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.homeSection {
+  padding-top: 10vh;
 }
 .homepage {
   color: white;
   width: 75%;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
   text-align: center;
   text-shadow: 0 0 5px black, 0 0 6px white, 0 0 7px black;
+  button {
+    margin: 0 3%;
+    margin-bottom: 1%;
+    border-radius: 1px;
+    border: 1px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(44, 45, 46);
+    border-right: 2px solid rgb(72, 73, 75);
+    background-color: #ff000070;
+    color: whitesmoke;
+    padding: 1% 2%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    &:hover {
+      background-color: #ff000090;
+    }
+  }
   .homepageHeader {
     display: flex;
     justify-content: center;
     align-items: center;
+    img {
+      margin: -2% 0;
+    }
     h2 {
-      font-size: 3rem;
+      font-size: 250%;
     }
   }
   h3 {
-    font-size: 2.3rem;
+    font-size: 210%;
+    margin: 0 0 2%;
   }
 }
 
