@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="homepage">
           <div className="homepageHeader">
             <img src={logo} alt="" />
-            <h2>Restaurant menu for Restarante Mexicano</h2>
+            <h2>Menu for Restarante Mexicano</h2>
           </div>
 
           <h3>Dine in is open! Order now to dine in or carry out</h3>
