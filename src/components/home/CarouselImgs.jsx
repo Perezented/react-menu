@@ -21,7 +21,7 @@ export default class CarouselImgs extends Component {
       pauseOnHover: false
     };
     return (
-      <div>
+      <div className="carousel">
         <Slider {...settings}>
           <div>
             <img className="img0" src={food0} alt="" />
