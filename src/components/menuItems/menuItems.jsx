@@ -19,7 +19,7 @@ const Menu = (props) => {
             props.menuArray.foodItems.map((value, key) => {
               return (
                 <div className="menuItems" key={key}>
-                  <h4 className="categoryValue">{value.category}</h4>
+                  <h4 className="categoryValue">{value.categoryDescription}</h4>
                   <div className="menuCard">
                     <h2>{value.menuItem}</h2>
                     <h5>{value.description}</h5>
@@ -29,9 +29,9 @@ const Menu = (props) => {
                       {value.addtDescription && (
                         <h5>{value.addtDescription}</h5>
                       )}
-                      {value.additionalPrice && (
+                      {/* {value.additionalPrice && (
                         <h5>{value.additionalPrice}</h5>
-                      )}
+                      )} */}
                       <Counter
                         id={key + 1}
                         foodItem={value}
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
   return {
     isFetching: state.menuFetchReducer.isFetching,
     error: state.menuFetchReducer.error,
-    menuArray: state.menuFetchReducer.menuArray,
+    menuArray: state.menuFetchReducer.menuArray
   };
 };
 
