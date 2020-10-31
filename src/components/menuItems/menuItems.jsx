@@ -22,7 +22,7 @@ const Menu = (props) => {
                   <h4 className="categoryValue">{value.categoryDescription}</h4>
                   <div className="menuCard">
                     <h2>{value.menuItem}</h2>
-                    <h5>{value.description}</h5>
+                    <p>{value.description}</p>
                     <div className="subMenuItems">
                       {" "}
                       <p>${value.price}</p>
