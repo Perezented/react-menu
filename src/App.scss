@@ -221,7 +221,8 @@ html {
     .subMenuItems {
       background-color: rgba(219, 196, 196, 0);
       margin: 0 auto;
-      display: flex;
+      display: grid;
+      grid-template-columns: 0.35fr 0.65fr;
       justify-content: space-around;
       align-items: center;
       height: 5vh;
@@ -232,7 +233,7 @@ html {
       align-items: center;
       justify-content: space-between;
       align-content: center;
-      width: 70%;
+      width: 100%;
       input {
         width: 75%;
       }
