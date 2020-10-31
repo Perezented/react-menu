@@ -210,12 +210,12 @@ html {
       margin-bottom: 1%;
       display: grid;
       grid-template-rows: repeat(3, 1fr);
-      h5 {
+      p {
         width: 85%;
         margin: auto;
         // padding: 1% 3% 1% 8%;
         font-size: 1.2rem;
-        line-height: 1rem;
+        line-height: 1.2rem;
       }
     }
     .subMenuItems {
@@ -308,6 +308,9 @@ html {
     margin-left: -5%;
     margin-top: 7%;
     padding: 1%;
+  }
+  h1 {
+    line-height: 1.4rem;
   }
 }
 .totalRotated {
