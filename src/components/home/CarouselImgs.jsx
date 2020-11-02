@@ -36,7 +36,7 @@ export default class CarouselImgs extends Component {
             <img src={food3} alt="" />
           </div>
           <div>
-            <img src={food4} alt="" />
+            <img className="lastimg" src={food4} alt="" />
           </div>
         </Slider>
       </div>

@@ -62,11 +62,15 @@ html {
   overflow: hidden;
   .img0 {
     margin-top: -10vh;
+    z-index: 1;
   }
   img {
     height: 120vh;
     width: 79vw;
     margin-top: -50vh;
+  }
+  .lastimg {
+    z-index: -1;
   }
 }
 .homepageImg {
