@@ -9,6 +9,10 @@ export default function Welcome() {
           Please enter phone number. It is used to help identify your order.
         </p>
         <WelcomeBox />
+        <p>
+          Please note that phone numbers are not actually recorded other than by
+          spy agencies. Thank you.
+        </p>
       </section>
     </>
   );
